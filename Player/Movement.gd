@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 50
-const JUMP = 825
+const JUMP = 750
 const FLOOR = Vector2(0, -1)
 export var speed = 250
 var velocity = Vector2.ZERO;
