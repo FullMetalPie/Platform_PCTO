@@ -1,10 +1,14 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_background.png" type="Texture" id=3]
 [ext_resource path="res://Collezionabili/Fire_Estinguisher_Collezionabile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Levels/Livello 2.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=7]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Forest_tileset.png 0"
@@ -134,7 +138,46 @@ b = Vector2( 97, -32 )
 a = Vector2( -4027, 32 )
 b = Vector2( -4027, -502 )
 
-[node name="Livello 2" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 2060.25, 10.5 )
+
+[sub_resource type="DynamicFont" id=36]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=37]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=38]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=33]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=34]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=35]
+use_filter = true
+extra_spacing_space = 8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=39]
+font_data = ExtResource( 6 )
+
+[node name="Livello_2" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -281,7 +324,7 @@ position = Vector2( 3968, 288 )
 shape = SubResource( 31 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 352, 473 )
+position = Vector2( 32, 416 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -17, -206 )
@@ -291,7 +334,109 @@ limit_top = 0
 limit_right = 4122
 limit_bottom = 600
 limit_smoothed = true
-smoothing_enabled = true
 
 [node name="Fire_Estinguisher_Area" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1041, 316 )
+position = Vector2( 4064, 440 )
+
+[node name="Dead_Fall_Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dead_Fall_Zone"]
+position = Vector2( 2061.75, 680 )
+shape = SubResource( 32 )
+
+[node name="CanvasLayer_Win" type="CanvasLayer" parent="."]
+
+[node name="Popup_Win" type="Popup" parent="CanvasLayer_Win"]
+visible = true
+margin_left = 464.0
+margin_top = 272.0
+margin_right = 504.0
+margin_bottom = 312.0
+
+[node name="Label_Win" type="Label" parent="CanvasLayer_Win/Popup_Win"]
+margin_left = -216.0
+margin_top = -40.0
+margin_right = 312.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 36 )
+custom_styles/normal = ExtResource( 7 )
+align = 1
+
+[node name="Button_Win_Esci" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 240.0
+margin_top = 136.0
+margin_right = 296.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 37 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+text = "ESCI"
+
+[node name="Button_Win_Coll" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 136.0
+margin_top = 80.0
+margin_right = 400.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 38 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+text = "VISUALIZZA I COLLEZIONABILI"
+icon_align = 1
+
+[node name="CanvasLayer_Dead" type="CanvasLayer" parent="."]
+
+[node name="Popup_Dead" type="Popup" parent="CanvasLayer_Dead"]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label_Dead" type="Label" parent="CanvasLayer_Dead/Popup_Dead"]
+margin_left = 248.0
+margin_top = 232.0
+margin_right = 776.0
+margin_bottom = 424.0
+custom_fonts/font = SubResource( 33 )
+custom_styles/normal = ExtResource( 7 )
+text = "
+HAI PERSO!"
+align = 1
+
+[node name="Button_Dead_Esci2" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+margin_left = 208.0
+margin_top = 128.0
+margin_right = 328.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 34 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+text = "ESCI"
+
+[node name="Button_Dead_Ripirova" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+anchor_right = 0.099
+anchor_bottom = 0.122
+margin_left = 208.0
+margin_top = 64.0
+margin_right = 275.728
+margin_bottom = 82.576
+custom_fonts/font = SubResource( 35 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+text = "RIPROVA"
+icon_align = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label_FPS" type="Label" parent="CanvasLayer"]
+margin_right = 120.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 39 )
+
+[connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Coll" to="." method="_on_Button_Win_Coll_pressed"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
