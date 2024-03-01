@@ -6,6 +6,7 @@ const FLOOR = Vector2(0, -1)
 export var speed = 250
 var velocity = Vector2.ZERO;
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	
@@ -31,7 +32,11 @@ func _physics_process(delta):
 		
 	if velocity.x > 0:
 		$AnimatedSprite.flip_h = 0
+		$CollisionShape2D.scale.x = 1 
 	elif velocity.x < 0:
 		$AnimatedSprite.flip_h = 1
+		$CollisionShape2D.scale.x = -1 
 		
 	velocity = move_and_slide(velocity, FLOOR)
+
+	
