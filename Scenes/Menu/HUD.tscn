@@ -1,0 +1,217 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_MAIN.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_MAIN_HOVER.tres" type="StyleBox" id=3]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_MAIN_PRESSED.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=5]
+[ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=6]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=7]
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/Menu/Utility files/tickù.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Menu/Utility files/X.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_DISABLED.tres" type="StyleBox" id=11]
+[ext_resource path="res://Scenes/Menu/Utility files/an orange city.png" type="Texture" id=12]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends CanvasLayer
+
+onready var pop_Close_Window = $Popup_CloseWindow
+
+signal show_levels
+signal show_collect
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+
+
+func _on_Levels_pressed():
+	emit_signal(\"show_levels\")
+	get_tree().change_scene(\"res://Scenes/Menu/HUD_LEVELS.tscn\")
+
+
+func _on_Collec_pressed():
+	emit_signal(\"show_collect\")
+	get_tree().change_scene(\"res://Scenes/Menu/HUD_COLLECT.tscn\")
+
+
+func _on_Exit_pressed():
+	pop_Close_Window.show()
+	$Levels.disabled = true
+	$Collec.disabled = true
+	$Exit.disabled = true
+	$Title.add_color_override(\"font_color\", Color.black)
+
+
+func _on_Button_Popup_Yes_pressed():
+	get_tree().quit()
+
+
+func _on_Button_Popup_No_pressed():
+	pop_Close_Window.hide()
+	$Levels.disabled = false
+	$Collec.disabled = false
+	$Exit.disabled = false
+	$Title.add_color_override(\"font_color\", Color.white)
+"
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 9
+outline_color = Color( 0.282353, 0.286275, 0.211765, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 45
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
+
+[node name="HUD_MAIN" type="CanvasLayer"]
+script = SubResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Title" type="Label" parent="."]
+margin_left = 85.0
+margin_top = 58.0
+margin_right = 956.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 1 )
+text = "terry the worker"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Version" type="Label" parent="."]
+margin_left = 925.0
+margin_top = 573.0
+margin_right = 1015.0
+margin_bottom = 593.0
+custom_fonts/font = SubResource( 2 )
+text = "Version 1.1"
+
+[node name="Levels" type="Button" parent="."]
+margin_left = 427.0
+margin_top = 175.0
+margin_right = 594.0
+margin_bottom = 243.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 2 )
+text = "GIOCA"
+
+[node name="Collec" type="Button" parent="."]
+margin_left = 296.0
+margin_top = 312.0
+margin_right = 735.0
+margin_bottom = 380.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 2 )
+text = "COLLEZIONABILI"
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 448.0
+margin_right = 592.0
+margin_bottom = 516.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 2 )
+text = "QUIT"
+icon_align = 1
+
+[node name="Popup_CloseWindow" type="Popup" parent="."]
+visible = true
+margin_left = 480.0
+margin_top = 288.0
+margin_right = 520.0
+margin_bottom = 328.0
+
+[node name="Label_Quit" type="Label" parent="Popup_CloseWindow"]
+margin_left = -336.0
+margin_top = -72.0
+margin_right = 408.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+text = "Sei sicuro di voler abbandonare ?"
+align = 1
+
+[node name="Button_Popup_Yes" type="Button" parent="Popup_CloseWindow/Label_Quit"]
+anchor_right = 0.032
+anchor_bottom = 0.091
+margin_left = 176.0
+margin_top = 96.0
+margin_right = 240.192
+margin_bottom = 135.984
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+icon = ExtResource( 9 )
+icon_align = 1
+
+[node name="Button_Popup_No" type="Button" parent="Popup_CloseWindow/Label_Quit"]
+margin_left = 496.0
+margin_top = 96.0
+margin_right = 584.0
+margin_bottom = 152.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+icon = ExtResource( 10 )
+icon_align = 1
+
+[connection signal="pressed" from="Levels" to="." method="_on_Levels_pressed"]
+[connection signal="pressed" from="Collec" to="." method="_on_Collec_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Popup_CloseWindow/Label_Quit/Button_Popup_Yes" to="." method="_on_Button_Popup_Yes_pressed"]
+[connection signal="pressed" from="Popup_CloseWindow/Label_Quit/Button_Popup_No" to="." method="_on_Button_Popup_No_pressed"]
