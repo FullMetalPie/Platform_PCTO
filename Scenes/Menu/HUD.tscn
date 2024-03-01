@@ -53,6 +53,7 @@ func _on_Exit_pressed():
 
 func _on_Button_Popup_Yes_pressed():
 	get_tree().quit()
+	JavaScript.eval(\"window.close()\");
 
 
 func _on_Button_Popup_No_pressed():
