@@ -1,8 +1,10 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_background.png" type="Texture" id=3]
+[ext_resource path="res://Collezionabili/Fire_Estinguisher_Collezionabile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Levels/Livello 2.gd" type="Script" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Forest_tileset.png 0"
@@ -133,6 +135,7 @@ a = Vector2( -4027, 32 )
 b = Vector2( -4027, -502 )
 
 [node name="Livello 2" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -289,3 +292,6 @@ limit_right = 4122
 limit_bottom = 600
 limit_smoothed = true
 smoothing_enabled = true
+
+[node name="Fire_Estinguisher_Area" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1041, 316 )
