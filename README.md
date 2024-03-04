@@ -13,8 +13,8 @@ Il giocatore puo’ eseguire 2 azioni:
 - Movimento orizzontale (sinistra e destra);
   - Tasto[A] sinistra
   - Tasto[D] destra
-  - Freccia[⬅] sinistra
-  - Freccia[➡] destra
+  - Freccia[&larr;] sinistra
+  - Freccia[&rarr;] destra
 - Salto;
   - Tasto[spazio]
-  - freccia[⬆]
+  - freccia[&uarr;]
