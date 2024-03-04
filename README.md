@@ -10,11 +10,11 @@ Il gioco e’ suddiviso in 5 livelli, ognuno di essi con una particolare prova d
 Lo scopo del gioco e’ superare il livello e ottenere il D.P.I, che sara’ poi visualizzabile insieme a tutti gli altri dispositivi in una schermata apposita, dove sara’ possibile imparare di piu’ sull’uso di questi oggetti.
 
 Il giocatore puo’ eseguire 2 azioni:
-Movimento orizzontale (sinistra e destra);
-Tasto[A] sinistra
-Tasto[D] destra
-Freccia[⬅] sinistra
-Freccia[➡] destra
-Salto;
-Tasto[spazio]
-Freccia[⬆]
+- Movimento orizzontale (sinistra e destra);
+- Tasto[A] sinistra
+- Tasto[D] destra
+- Freccia[⬅] sinistra
+- Freccia[➡] destra
+- Salto;
+- Tasto[spazio]
+- Freccia[⬆]
