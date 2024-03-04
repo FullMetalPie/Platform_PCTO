@@ -16,5 +16,5 @@ Il giocatore puo’ eseguire 2 azioni:
   Freccia[⬅] sinistra
   Freccia[➡] destra
 - Salto;
-  Tasto[spazio]
-  Freccia[⬆]
+-   Tasto[spazio]
+-   freccia[⬆]
