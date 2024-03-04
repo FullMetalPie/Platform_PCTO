@@ -33,8 +33,8 @@ func _ready():
 
 
 func _on_Lev_1_pressed():
-	emit_signal(\"lev_1\")
-	print(\"Pulsante 1 premuto\")
+	#emit_signal(\"lev_1\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
 func _on_Lev_2_pressed():
 	#emit_signal(\"lev_2\")
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
