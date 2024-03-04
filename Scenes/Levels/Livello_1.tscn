@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 1 - Factory/1 Tiles/IndustrialTile_02.png" type="Texture" id=2]
@@ -121,6 +121,10 @@
 [ext_resource path="res://Art - general/LvL 1 - Factory/3 Objects/Barrel2.png" type="Texture" id=119]
 [ext_resource path="res://Art - general/LvL 1 - Factory/3 Objects/Barrel3.png" type="Texture" id=120]
 [ext_resource path="res://Art - general/LvL 1 - Factory/3 Objects/Box4.png" type="Texture" id=121]
+[ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=122]
+[ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=123]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=124]
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=125]
 
 [sub_resource type="TileSet" id=1]
 0/name = "IndustrialTile_01.png 0"
@@ -1826,6 +1830,24 @@ b = Vector2( -300, 158 )
 35/shapes = [  ]
 35/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 2060.25, 10.5 )
+
+[sub_resource type="DynamicFont" id=16]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 125 )
+
+[sub_resource type="DynamicFont" id=17]
+use_filter = true
+font_data = ExtResource( 125 )
+
+[sub_resource type="DynamicFont" id=18]
+use_filter = true
+extra_spacing_space = 8
+font_data = ExtResource( 125 )
+
 [node name="Livello_1" type="Node2D"]
 script = ExtResource( 84 )
 
@@ -1960,6 +1982,55 @@ position = Vector2( 2321, 512 )
 collision_layer = 2
 collision_mask = 2
 
+[node name="Dead_Fall_Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dead_Fall_Zone"]
+position = Vector2( 2061.75, 680 )
+shape = SubResource( 15 )
+
+[node name="CanvasLayer_Dead" type="CanvasLayer" parent="."]
+
+[node name="Popup_Dead" type="Popup" parent="CanvasLayer_Dead"]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label_Dead" type="Label" parent="CanvasLayer_Dead/Popup_Dead"]
+margin_left = 248.0
+margin_top = 232.0
+margin_right = 776.0
+margin_bottom = 424.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/normal = ExtResource( 122 )
+text = "
+HAI PERSO!"
+align = 1
+
+[node name="Button_Dead_Esci2" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+margin_left = 208.0
+margin_top = 128.0
+margin_right = 328.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 17 )
+custom_styles/hover = ExtResource( 124 )
+custom_styles/pressed = ExtResource( 123 )
+custom_styles/normal = ExtResource( 123 )
+text = "ESCI"
+
+[node name="Button_Dead_Ripirova" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+anchor_right = 0.099
+anchor_bottom = 0.122
+margin_left = 208.0
+margin_top = 64.0
+margin_right = 275.728
+margin_bottom = 82.576
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = ExtResource( 124 )
+custom_styles/pressed = ExtResource( 123 )
+custom_styles/normal = ExtResource( 123 )
+text = "RIPROVA"
+icon_align = 1
+
 [connection signal="body_entered" from="Transporter_right" to="." method="_on_Transporter_right_body_entered"]
 [connection signal="body_exited" from="Transporter_right" to="." method="_on_Transporter_right_body_exited"]
 [connection signal="body_entered" from="Transporter_right2" to="." method="_on_Transporter_right_body_entered"]
@@ -1976,3 +2047,6 @@ collision_mask = 2
 [connection signal="body_exited" from="Transporter_left3" to="." method="_on_Transporter_left_body_exited"]
 [connection signal="body_entered" from="Transporter_left5" to="." method="_on_Transporter_left_body_entered"]
 [connection signal="body_exited" from="Transporter_left5" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Dead_Fall_Zone_body_entered"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
