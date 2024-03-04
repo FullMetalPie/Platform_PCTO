@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_tileset.png" type="Texture" id=2]
@@ -577,6 +577,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Curve2D" id=47]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 16, 256, 0, 0, 0, 0, 4224, 256 )
+}
+
+[sub_resource type="GDScript" id=48]
+resource_name = "Path2D_FireScript"
+script/source = "extends Path2D
+
+var inc = 0
+export var firespeed = 215
+
+func _process(delta):
+	inc += delta * firespeed
+	$PathFollow2D_Fire.offset = inc
+	
+"
+
 [node name="Livello_2" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -725,6 +743,8 @@ shape = SubResource( 31 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 416 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -17, -206 )
@@ -839,144 +859,68 @@ custom_fonts/font = SubResource( 39 )
 [node name="Flame" type="Area2D" parent="."]
 position = Vector2( 563, 502 )
 scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
-position = Vector2( -1, 5 )
+position = Vector2( -1, 9.5 )
 shape = SubResource( 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Flame"]
-position = Vector2( -0.5, 0 )
+position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
 frame = 2
 playing = true
 
 [node name="Flame2" type="Area2D" parent="."]
-position = Vector2( 1004, 374 )
+position = Vector2( 1005, 374 )
 scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame2"]
-position = Vector2( -1, 5 )
+position = Vector2( -1, 9.5 )
 shape = SubResource( 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Flame2"]
-position = Vector2( -0.5, 0 )
+position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
 frame = 3
 playing = true
 
 [node name="Flame3" type="Area2D" parent="."]
-position = Vector2( 1325, 502 )
+position = Vector2( 1329, 502 )
 scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame3"]
-position = Vector2( -1, 5 )
+position = Vector2( -1, 9.5 )
 shape = SubResource( 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Flame3"]
-position = Vector2( -0.5, 0 )
-frames = SubResource( 41 )
-animation = "Default"
-frame = 1
-playing = true
-
-[node name="Flame4" type="Area2D" parent="."]
-position = Vector2( 2027, 406 )
-scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame4"]
-position = Vector2( -1, 5 )
-shape = SubResource( 46 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame4"]
-position = Vector2( -0.5, 0 )
-frames = SubResource( 41 )
-animation = "Default"
-frame = 2
-playing = true
-
-[node name="Flame5" type="Area2D" parent="."]
-position = Vector2( 2255, 342 )
-scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame5"]
-position = Vector2( -1, 5 )
-shape = SubResource( 46 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame5"]
-position = Vector2( -0.5, 0 )
+position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
 frame = 3
 playing = true
 
-[node name="Flame6" type="Area2D" parent="."]
-position = Vector2( 3244, 470 )
-scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Path2D_Fire" type="Path2D" parent="."]
+curve = SubResource( 47 )
+script = SubResource( 48 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame6"]
-position = Vector2( -1, 5 )
-shape = SubResource( 46 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame6"]
-position = Vector2( -0.5, 0 )
-frames = SubResource( 41 )
-animation = "Default"
-playing = true
-
-[node name="Flame7" type="Area2D" parent="."]
-position = Vector2( 3690, 534 )
-scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame7"]
-position = Vector2( -1, 5 )
-shape = SubResource( 46 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame7"]
-position = Vector2( -0.5, 0 )
-frames = SubResource( 41 )
-animation = "Default"
-playing = true
-
-[node name="Flame8" type="Area2D" parent="."]
-position = Vector2( 3856, 534 )
-scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame8"]
-position = Vector2( -1, 5 )
-shape = SubResource( 46 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame8"]
-position = Vector2( -0.5, 0 )
-frames = SubResource( 41 )
-animation = "Default"
-frame = 1
-playing = true
+[node name="PathFollow2D_Fire" type="PathFollow2D" parent="Path2D_Fire"]
 
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
@@ -986,8 +930,3 @@ playing = true
 [connection signal="body_entered" from="Flame" to="." method="_on_Flame_body_entered"]
 [connection signal="body_entered" from="Flame2" to="." method="_on_Flame_body_entered"]
 [connection signal="body_entered" from="Flame3" to="." method="_on_Flame_body_entered"]
-[connection signal="body_entered" from="Flame4" to="." method="_on_Flame_body_entered"]
-[connection signal="body_entered" from="Flame5" to="." method="_on_Flame_body_entered"]
-[connection signal="body_entered" from="Flame6" to="." method="_on_Flame_body_entered"]
-[connection signal="body_entered" from="Flame7" to="." method="_on_Flame_body_entered"]
-[connection signal="body_entered" from="Flame8" to="." method="_on_Flame_body_entered"]
