@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 2 - Forest/Forest_tileset.png" type="Texture" id=2]
@@ -9,6 +9,17 @@
 [ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=7]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=8]
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=9]
+[ext_resource path="res://Art - general/LvL 2 - Forest/Trees/1.png" type="Texture" id=10]
+[ext_resource path="res://Art - general/LvL 2 - Forest/Trees/2.png" type="Texture" id=11]
+[ext_resource path="res://Art - general/LvL 2 - Forest/Trees/3.png" type="Texture" id=12]
+[ext_resource path="res://Art - general/LvL 2 - Forest/Flame/Pixel Flame Spritesheet.png" type="Texture" id=13]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_7.png" type="Texture" id=14]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_9.png" type="Texture" id=15]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_10.png" type="Texture" id=16]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_6.png" type="Texture" id=17]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_4.png" type="Texture" id=18]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_5.png" type="Texture" id=19]
+[ext_resource path="res://Art - general/LvL 2 - Forest/PNG/jungle_tree_8.png" type="Texture" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Forest_tileset.png 0"
@@ -53,6 +64,363 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
+2/name = "1.png 2"
+2/texture = ExtResource( 10 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 96, 64 )
+2/tile_mode = 2
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 32, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "1.png 3"
+3/texture = ExtResource( 10 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 96, 96 )
+3/tile_mode = 2
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 32, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "2.png 4"
+4/texture = ExtResource( 11 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 96, 128 )
+4/tile_mode = 2
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 32, 32 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "3.png 5"
+5/texture = ExtResource( 12 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 128, 160 )
+5/tile_mode = 2
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 32, 32 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "jungle_tree_10.png 6"
+6/texture = ExtResource( 16 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 320, 128 )
+6/tile_mode = 2
+6/autotile/icon_coordinate = Vector2( 0, 0 )
+6/autotile/tile_size = Vector2( 32, 32 )
+6/autotile/spacing = 0
+6/autotile/occluder_map = [  ]
+6/autotile/navpoly_map = [  ]
+6/autotile/priority_map = [  ]
+6/autotile/z_index_map = [  ]
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "jungle_tree_9.png 7"
+7/texture = ExtResource( 15 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 64, 64 )
+7/tile_mode = 2
+7/autotile/icon_coordinate = Vector2( 0, 0 )
+7/autotile/tile_size = Vector2( 32, 32 )
+7/autotile/spacing = 0
+7/autotile/occluder_map = [  ]
+7/autotile/navpoly_map = [  ]
+7/autotile/priority_map = [  ]
+7/autotile/z_index_map = [  ]
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "jungle_tree_8.png 8"
+8/texture = ExtResource( 20 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 96, 64 )
+8/tile_mode = 2
+8/autotile/icon_coordinate = Vector2( 0, 0 )
+8/autotile/tile_size = Vector2( 32, 32 )
+8/autotile/spacing = 0
+8/autotile/occluder_map = [  ]
+8/autotile/navpoly_map = [  ]
+8/autotile/priority_map = [  ]
+8/autotile/z_index_map = [  ]
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "jungle_tree_7.png 9"
+9/texture = ExtResource( 14 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 96, 128, 64 )
+9/tile_mode = 2
+9/autotile/icon_coordinate = Vector2( 0, 0 )
+9/autotile/tile_size = Vector2( 32, 32 )
+9/autotile/spacing = 0
+9/autotile/occluder_map = [  ]
+9/autotile/navpoly_map = [  ]
+9/autotile/priority_map = [  ]
+9/autotile/z_index_map = [  ]
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "jungle_tree_6.png 10"
+10/texture = ExtResource( 17 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 96, 192, 96 )
+10/tile_mode = 2
+10/autotile/icon_coordinate = Vector2( 0, 0 )
+10/autotile/tile_size = Vector2( 32, 32 )
+10/autotile/spacing = 0
+10/autotile/occluder_map = [  ]
+10/autotile/navpoly_map = [  ]
+10/autotile/priority_map = [  ]
+10/autotile/z_index_map = [  ]
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "jungle_tree_5.png 11"
+11/texture = ExtResource( 19 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 96, 96, 128 )
+11/tile_mode = 2
+11/autotile/icon_coordinate = Vector2( 0, 0 )
+11/autotile/tile_size = Vector2( 32, 32 )
+11/autotile/spacing = 0
+11/autotile/occluder_map = [  ]
+11/autotile/navpoly_map = [  ]
+11/autotile/priority_map = [  ]
+11/autotile/z_index_map = [  ]
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "jungle_tree_4.png 12"
+12/texture = ExtResource( 18 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 192, 64, 32 )
+12/tile_mode = 2
+12/autotile/icon_coordinate = Vector2( 0, 0 )
+12/autotile/tile_size = Vector2( 32, 32 )
+12/autotile/spacing = 0
+12/autotile/occluder_map = [  ]
+12/autotile/navpoly_map = [  ]
+12/autotile/priority_map = [  ]
+12/autotile/z_index_map = [  ]
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "jungle_tree_4.png 13"
+13/texture = ExtResource( 18 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 160, 192, 64 )
+13/tile_mode = 2
+13/autotile/icon_coordinate = Vector2( 0, 0 )
+13/autotile/tile_size = Vector2( 32, 32 )
+13/autotile/spacing = 0
+13/autotile/occluder_map = [  ]
+13/autotile/navpoly_map = [  ]
+13/autotile/priority_map = [  ]
+13/autotile/z_index_map = [  ]
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "jungle_tree_7.png 14"
+14/texture = ExtResource( 14 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 128, 64 )
+14/tile_mode = 2
+14/autotile/icon_coordinate = Vector2( 0, 0 )
+14/autotile/tile_size = Vector2( 32, 32 )
+14/autotile/spacing = 0
+14/autotile/occluder_map = [  ]
+14/autotile/navpoly_map = [  ]
+14/autotile/priority_map = [  ]
+14/autotile/z_index_map = [  ]
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "jungle_tree_6.png 15"
+15/texture = ExtResource( 17 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 192, 160 )
+15/tile_mode = 2
+15/autotile/icon_coordinate = Vector2( 0, 0 )
+15/autotile/tile_size = Vector2( 32, 32 )
+15/autotile/spacing = 0
+15/autotile/occluder_map = [  ]
+15/autotile/navpoly_map = [  ]
+15/autotile/priority_map = [  ]
+15/autotile/z_index_map = [  ]
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "jungle_tree_5.png 16"
+16/texture = ExtResource( 19 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 96, 192 )
+16/tile_mode = 2
+16/autotile/icon_coordinate = Vector2( 0, 0 )
+16/autotile/tile_size = Vector2( 32, 32 )
+16/autotile/spacing = 0
+16/autotile/occluder_map = [  ]
+16/autotile/navpoly_map = [  ]
+16/autotile/priority_map = [  ]
+16/autotile/z_index_map = [  ]
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "jungle_tree_4.png 17"
+17/texture = ExtResource( 18 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 192, 160 )
+17/tile_mode = 2
+17/autotile/icon_coordinate = Vector2( 0, 0 )
+17/autotile/tile_size = Vector2( 32, 32 )
+17/autotile/spacing = 0
+17/autotile/occluder_map = [  ]
+17/autotile/navpoly_map = [  ]
+17/autotile/priority_map = [  ]
+17/autotile/z_index_map = [  ]
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+18/name = "jungle_tree_7.png 18"
+18/texture = ExtResource( 14 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 128, 160 )
+18/tile_mode = 2
+18/autotile/icon_coordinate = Vector2( 0, 0 )
+18/autotile/tile_size = Vector2( 32, 32 )
+18/autotile/spacing = 0
+18/autotile/occluder_map = [  ]
+18/autotile/navpoly_map = [  ]
+18/autotile/priority_map = [  ]
+18/autotile/z_index_map = [  ]
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 541.5, 30.5 )
@@ -177,6 +545,38 @@ font_data = ExtResource( 6 )
 [sub_resource type="DynamicFont" id=39]
 font_data = ExtResource( 6 )
 
+[sub_resource type="CapsuleShape2D" id=46]
+radius = 10.5
+height = 0.0
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
+} ]
+
 [node name="Livello_2" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -195,7 +595,7 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 format = 1
-tile_data = PoolIntArray( 524352, 0, 65537, 524353, 0, 65537, 524354, 0, 65537, 524355, 0, 65537, 524356, 0, 65537, 524357, 0, 65537, 524358, 0, 65537, 524359, 0, 65537, 589884, 0, 65537, 589885, 0, 65537, 589886, 0, 65537, 589887, 0, 65537, 589888, 0, 65537, 589889, 0, 65537, 589890, 0, 65537, 589891, 0, 65537, 589892, 0, 65537, 589893, 0, 65537, 589894, 0, 65537, 589895, 0, 65537, 655420, 0, 65537, 655421, 0, 65537, 655422, 0, 65537, 655423, 0, 65537, 655424, 0, 65537, 655425, -1610612736, 65537, 720924, 0, 65537 )
+tile_data = PoolIntArray( 131100, 5, 0, 131101, 5, 1, 131102, 5, 2, 131139, 3, 0, 131140, 3, 1, 131141, 3, 2, 196636, 5, 65536, 196637, 5, 65537, 196638, 5, 65538, 196639, 5, 65539, 196668, 5, 0, 196669, 5, 1, 196670, 5, 2, 196675, 3, 65536, 196676, 3, 65537, 196677, 3, 65538, 262172, 5, 131072, 262173, 5, 131073, 262174, 5, 131074, 262175, 5, 131075, 262204, 5, 65536, 262205, 5, 65537, 262206, 5, 65538, 262207, 5, 65539, 262212, 3, 131073, 262213, 3, 131074, 327693, 15, 0, 327694, 15, 1, 327695, 15, 2, 327708, 5, 196608, 327709, 5, 196609, 327740, 5, 131072, 327741, 5, 131073, 327742, 5, 131074, 327743, 5, 131075, 327762, 18, 0, 327763, 18, 1, 327764, 18, 2, 327765, 18, 3, 327778, 5, 0, 327779, 5, 1, 327780, 5, 2, 327783, 8, 0, 327784, 8, 1, 393229, 15, 65536, 393230, 15, 65537, 393231, 15, 65538, 393232, 15, 65539, 393233, 15, 65540, 393276, 5, 196608, 393277, 5, 196609, 393298, 18, 65536, 393299, 18, 65537, 393300, 18, 65538, 393314, 5, 65536, 393315, 5, 65537, 393316, 5, 65538, 393317, 5, 65539, 393319, 8, 65536, 393320, 8, 65537, 458765, 15, 131072, 458766, 15, 131073, 458767, 15, 131074, 458768, 15, 131075, 458769, 15, 131076, 458770, 15, 131077, 458790, 3, 0, 458791, 3, 1, 458792, 3, 2, 458834, 18, 131072, 458835, 18, 131073, 458836, 18, 131074, 458837, 18, 131075, 458850, 5, 131072, 458851, 5, 131073, 458852, 5, 131074, 458853, 5, 131075, 458867, 6, 3, 458868, 6, 4, 458869, 6, 5, 458870, 6, 6, 458871, 6, 7, 458872, 6, 8, 524302, 15, 196609, 524303, 15, 196610, 524304, 15, 196611, 524305, 15, 196612, 524326, 3, 65536, 524327, 3, 65537, 524328, 3, 65538, 524352, 0, 65537, 524353, 0, 65537, 524354, 0, 65537, 524355, 0, 65537, 524356, 0, 65537, 524357, 0, 65537, 524358, 0, 65537, 524359, 0, 65537, 524371, 18, 196609, 524372, 18, 196610, 524373, 18, 196611, 524386, 5, 196608, 524387, 5, 196609, 524403, 6, 65539, 524404, 6, 65540, 524405, 6, 65541, 524406, 6, 65542, 524407, 6, 65543, 524408, 6, 65544, 524409, 6, 65544, 589839, 15, 262146, 589840, 15, 262147, 589863, 3, 131073, 589864, 3, 131074, 589884, 0, 65537, 589885, 0, 65537, 589886, 0, 65537, 589887, 0, 65537, 589888, 0, 65537, 589889, 0, 65537, 589890, 0, 65537, 589891, 0, 65537, 589892, 0, 65537, 589893, 0, 65537, 589894, 0, 65537, 589895, 0, 65537, 589907, 18, 262145, 589908, 18, 262146, 589909, 18, 262147, 589939, 6, 131075, 589940, 6, 131076, 589941, 6, 131077, 589942, 6, 131078, 589943, 6, 131079, 589944, 6, 131080, 589945, 6, 131081, 655420, 0, 65537, 655421, 0, 65537, 655422, 0, 65537, 655423, 0, 65537, 655424, 0, 65537, 655425, -1610612736, 65537, 655471, 6, 196608, 655472, 6, 196609, 655473, 6, 196610, 655474, 6, 196611, 655475, 6, 196612, 655476, 6, 196613, 655477, 6, 196614, 655479, 6, 196615, 655480, 6, 196616, 655481, 6, 196617, 720924, 0, 65537, 1900611, 2, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -334,6 +734,7 @@ limit_top = 0
 limit_right = 4122
 limit_bottom = 600
 limit_smoothed = true
+smoothing_enabled = true
 
 [node name="Fire_Estinguisher_Area" parent="." instance=ExtResource( 4 )]
 position = Vector2( 4064, 440 )
@@ -435,8 +836,158 @@ margin_right = 120.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 39 )
 
+[node name="Flame" type="Area2D" parent="."]
+position = Vector2( 563, 502 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 2
+playing = true
+
+[node name="Flame2" type="Area2D" parent="."]
+position = Vector2( 1004, 374 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame2"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame2"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 3
+playing = true
+
+[node name="Flame3" type="Area2D" parent="."]
+position = Vector2( 1325, 502 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame3"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame3"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 1
+playing = true
+
+[node name="Flame4" type="Area2D" parent="."]
+position = Vector2( 2027, 406 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame4"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame4"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 2
+playing = true
+
+[node name="Flame5" type="Area2D" parent="."]
+position = Vector2( 2255, 342 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame5"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame5"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 3
+playing = true
+
+[node name="Flame6" type="Area2D" parent="."]
+position = Vector2( 3244, 470 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame6"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame6"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+playing = true
+
+[node name="Flame7" type="Area2D" parent="."]
+position = Vector2( 3690, 534 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame7"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame7"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+playing = true
+
+[node name="Flame8" type="Area2D" parent="."]
+position = Vector2( 3856, 534 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame8"]
+position = Vector2( -1, 5 )
+shape = SubResource( 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Flame8"]
+position = Vector2( -0.5, 0 )
+frames = SubResource( 41 )
+animation = "Default"
+frame = 1
+playing = true
+
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Coll" to="." method="_on_Button_Win_Coll_pressed"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
+[connection signal="body_entered" from="Flame" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame2" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame3" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame4" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame5" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame6" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame7" to="." method="_on_Flame_body_entered"]
+[connection signal="body_entered" from="Flame8" to="." method="_on_Flame_body_entered"]

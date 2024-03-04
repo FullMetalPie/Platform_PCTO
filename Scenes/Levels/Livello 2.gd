@@ -39,9 +39,6 @@ func _on_Button_Dead_Ripirova_pressed():
 	get_tree().change_scene("res://Scenes/Levels/Livello 2.tscn")
 	get_tree().paused = false
 
-
-
-
 func _on_Button_Win_Coll_pressed():
 	get_tree().change_scene("res://Scenes/Menu/HUD_COLLECT.tscn")
 	get_tree().paused = false
@@ -50,3 +47,8 @@ func _on_Button_Win_Coll_pressed():
 func _on_Button_Win_Esci_pressed():
 	get_tree().change_scene("res://Scenes/Menu/Main.tscn")
 	get_tree().paused = false
+
+
+func _on_Flame_body_entered(body):
+	$CanvasLayer_Dead/Popup_Dead.show()
+	$Player.speed = 0
