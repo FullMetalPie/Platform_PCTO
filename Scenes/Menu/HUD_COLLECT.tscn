@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_PRESSED.tres" type="StyleBox" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Scenes/Menu/Utility files/X.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=14]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_DISABLED.tres" type="StyleBox" id=15]
+[ext_resource path="res://Scenes/Menu/Utility files/padlock.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=17]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -23,6 +25,7 @@ onready var pop2 = $Popup_Col_2
 onready var pop3 = $Popup_Col_3
 onready var pop4 = $Popup_Col_4
 onready var pop5 = $Popup_Col_5
+onready var pop_false = $Popup_False
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -31,13 +34,44 @@ onready var pop5 = $Popup_Col_5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
+	if !Global.is_Helmet_collected:
+		$Col_1_False.show()
+		$Col_1.hide()
+	else:
+		$Col_1.show()
+		$Col_1_False.hide()
+		
+	if !Global.is_Extinguisher_collected:
+		$Col_2_False.show()
+		$Col_2.hide()
+	else:
+		$Col_2.show()
+		$Col_2_False.hide()
+		
+	if !Global.is_Mask_collected:
+		$Col_3_False.show()
+		$Col_3.hide()
+	else:
+		$Col_3.show()
+		$Col_3_False.hide()
+		
+	if !Global.is_Reflective_Suit_collected:
+		$Col_4_False.show()
+		$Col_4.hide()
+	else:
+		$Col_4.show()
+		$Col_4_False.hide()
+		
+	if !Global.is_Face_Mask_collected:
+		$Col_5_False.show()
+		$Col_5.hide()
+	else:
+		$Col_5.show()
+		$Col_5_False.hide()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(_delta):
+	pass
 
 
 func _on_Col_1_pressed():
@@ -156,6 +190,56 @@ func _on_Button_X_Pop5_pressed():
 	$Col_5.disabled = false
 	$Exit.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
+
+
+func _on_Col_1_False_pressed():
+	disableAll()
+
+func _on_Col_2_False_pressed():
+	disableAll()
+
+func _on_Col_3_False_pressed():
+	disableAll()
+
+func _on_Col_4_False_pressed():
+	disableAll()
+
+func _on_Col_5_False_pressed():
+	disableAll()
+
+func disableAll() -> void:
+	pop_false.show()
+	$Col_1.disabled = true
+	$Col_2.disabled = true
+	$Col_3.disabled = true
+	$Col_4.disabled = true
+	$Col_5.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
+	$Exit.disabled = true
+	$Title.add_color_override(\"font_color\", Color.black)
+
+
+func enableAll() -> void:
+	pop_false.hide()
+	$Col_1.disabled = false
+	$Col_2.disabled = false
+	$Col_3.disabled = false
+	$Col_4.disabled = false
+	$Col_5.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
+	$Exit.disabled = false
+	$Title.add_color_override(\"font_color\", Color.white)
+
+func _on_Button_False_pressed():
+	enableAll()
 "
 
 [sub_resource type="DynamicFont" id=1]
@@ -165,8 +249,25 @@ outline_color = Color( 0.282353, 0.286275, 0.211765, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 17 )
+
 [node name="HUD_COLLECT" type="CanvasLayer"]
 script = SubResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 212.0 ]
+}
 
 [node name="Title" type="Label" parent="."]
 margin_left = 216.0
@@ -239,6 +340,68 @@ custom_styles/pressed = ExtResource( 2 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 7 )
+icon_align = 1
+
+[node name="Col_1_False" type="Button" parent="."]
+margin_left = 137.0
+margin_top = 167.0
+margin_right = 298.0
+margin_bottom = 311.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 16 )
+icon_align = 1
+
+[node name="Col_2_False" type="Button" parent="."]
+margin_left = 440.0
+margin_top = 168.0
+margin_right = 601.0
+margin_bottom = 312.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 16 )
+icon_align = 1
+
+[node name="Col_3_False" type="Button" parent="."]
+anchor_right = 0.006
+margin_left = 760.0
+margin_top = 168.0
+margin_right = 911.856
+margin_bottom = 312.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 16 )
+icon_align = 1
+
+[node name="Col_4_False" type="Button" parent="."]
+margin_left = 288.0
+margin_top = 384.0
+margin_right = 449.0
+margin_bottom = 528.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 16 )
+icon_align = 1
+
+[node name="Col_5_False" type="Button" parent="."]
+show_behind_parent = true
+margin_left = 601.0
+margin_top = 383.0
+margin_right = 763.0
+margin_bottom = 527.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 15 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 16 )
 icon_align = 1
 
 [node name="Exit" type="Button" parent="."]
@@ -407,11 +570,52 @@ custom_styles/normal = ExtResource( 10 )
 icon = ExtResource( 13 )
 icon_align = 1
 
+[node name="Popup_False" type="Popup" parent="."]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label_False" type="Label" parent="Popup_False"]
+margin_left = 83.0
+margin_top = 257.0
+margin_right = 914.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = ExtResource( 14 )
+text = "Non hai ancora sbloccato questo collezionabile"
+align = 1
+valign = 3
+
+[node name="Button_False" type="Button" parent="Popup_False/Label_False"]
+margin_left = 386.0
+margin_top = 85.0
+margin_right = 465.0
+margin_bottom = 124.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+icon = ExtResource( 13 )
+icon_align = 1
+
+[node name="Label_cz" type="Label" parent="Popup_False/Label_False"]
+margin_left = 2.0
+margin_top = 42.0
+margin_right = 829.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 5 )
+text = "Gioca il relativo livello per visualizzare le caratteristiche di questo collezionabile"
+align = 1
+
 [connection signal="pressed" from="Col_1" to="." method="_on_Col_1_pressed"]
 [connection signal="pressed" from="Col_2" to="." method="_on_Col_2_pressed"]
 [connection signal="pressed" from="Col_3" to="." method="_on_Col_3_pressed"]
 [connection signal="pressed" from="Col_4" to="." method="_on_Col_4_pressed"]
 [connection signal="pressed" from="Col_5" to="." method="_on_Col_5_pressed"]
+[connection signal="pressed" from="Col_1_False" to="." method="_on_Col_1_False_pressed"]
+[connection signal="pressed" from="Col_2_False" to="." method="_on_Col_2_False_pressed"]
+[connection signal="pressed" from="Col_3_False" to="." method="_on_Col_3_False_pressed"]
+[connection signal="pressed" from="Col_4_False" to="." method="_on_Col_4_False_pressed"]
+[connection signal="pressed" from="Col_5_False" to="." method="_on_Col_5_False_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
 [connection signal="pressed" from="Popup_Col_1/Label_Pop1/Button_X_Pop1" to="." method="_on_Button_X_Pop1_pressed"]
@@ -419,3 +623,4 @@ icon_align = 1
 [connection signal="pressed" from="Popup_Col_3/Label_Pop3/Button_X_Pop3" to="." method="_on_Button_X_Pop3_pressed"]
 [connection signal="pressed" from="Popup_Col_4/Label_Pop4/Button_X_Pop4" to="." method="_on_Button_X_Pop4_pressed"]
 [connection signal="pressed" from="Popup_Col_5/Label_Pop5/Button_X_Pop5" to="." method="_on_Button_X_Pop5_pressed"]
+[connection signal="pressed" from="Popup_False/Label_False/Button_False" to="." method="_on_Button_False_pressed"]
