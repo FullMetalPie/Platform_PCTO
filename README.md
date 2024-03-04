@@ -11,10 +11,10 @@ Lo scopo del gioco e’ superare il livello e ottenere il D.P.I, che sara’ poi
 
 Il giocatore puo’ eseguire 2 azioni:
 - Movimento orizzontale (sinistra e destra);
-  Tasto[A] sinistra
-  Tasto[D] destra
-  Freccia[⬅] sinistra
-  Freccia[➡] destra
+  - Tasto[A] sinistra
+  - Tasto[D] destra
+  - Freccia[⬅] sinistra
+  - Freccia[➡] destra
 - Salto;
   - Tasto[spazio]
   - freccia[⬆]
