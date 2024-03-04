@@ -11,24 +11,26 @@ func _ready():
 	extinguisher_area.connect("is_entered_extintor", self, "_on_extinguisher_is_entered")
 	time_start = OS.get_unix_time()
 	
+	$Path2D_Fire.firespeed = 0
+	
 func _on_extinguisher_is_entered():
 	$CanvasLayer_Win/Popup_Win.show()
 	$CanvasLayer_Win/Popup_Win/Label_Win.text = ("\nHAI VINTO!\nTempo impiegato per completare il livello: " + str(time_elapsed) + " secondi")
 	print("arrivato")
 	$Player.speed = 0
-
-
+	$Path2D_Fire.firespeed = 0
+	
 func _process(delta):
 	time_now = OS.get_unix_time()
 	time_elapsed = time_now - time_start
 	$CanvasLayer/Label_FPS.text = str(Engine.get_frames_per_second()) + " FPS"
-	#print(time_elapsed)
-
-
+	if $Player.velocity.x != 0:
+		$Path2D_Fire.firespeed = 215
+	
 func _on_Area2D_body_entered(body):
 	$CanvasLayer_Dead/Popup_Dead.show()
 	$Player.speed = 0
-
+	$Path2D_Fire.firespeed = 0
 
 func _on_Button_Dead_Esci2_pressed():
 	get_tree().change_scene("res://Scenes/Menu/Main.tscn")
@@ -52,3 +54,9 @@ func _on_Button_Win_Esci_pressed():
 func _on_Flame_body_entered(body):
 	$CanvasLayer_Dead/Popup_Dead.show()
 	$Player.speed = 0
+	$Path2D_Fire.firespeed = 0
+
+func _on_Fire_body_entered(body):
+	$CanvasLayer_Dead/Popup_Dead.show()
+	$Player.speed = 0
+	$Path2D_Fire.firespeed = 0
