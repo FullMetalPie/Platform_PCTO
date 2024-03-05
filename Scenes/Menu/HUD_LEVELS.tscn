@@ -79,7 +79,7 @@ func disable_and_show():
 	$Locked_4.disabled = true
 	$Locked_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 func enable_and_hide():
 	popUp_lock.hide()

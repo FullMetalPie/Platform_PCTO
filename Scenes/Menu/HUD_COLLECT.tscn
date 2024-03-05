@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_PRESSED.tres" type="StyleBox" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_DISABLED.tres" type="StyleBox" id=15]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=17]
+[ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=18]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -82,7 +83,7 @@ func _on_Col_1_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
 func _on_Exit_pressed():
@@ -121,7 +122,7 @@ func _on_Col_2_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
 func _on_Col_3_pressed():
@@ -132,7 +133,7 @@ func _on_Col_3_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
 func _on_Button_X_Pop3_pressed():
@@ -154,7 +155,7 @@ func _on_Col_4_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
 func _on_Button_X_Pop4_pressed():
@@ -176,7 +177,7 @@ func _on_Col_5_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 	
 
 
@@ -220,7 +221,7 @@ func disableAll() -> void:
 	$Col_4_False.disabled = true
 	$Col_5_False.disabled = true
 	$Exit.disabled = true
-	$Title.add_color_override(\"font_color\", Color.black)
+	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
 func enableAll() -> void:
@@ -349,7 +350,7 @@ margin_right = 298.0
 margin_bottom = 311.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 16 )
 icon_align = 1
@@ -361,7 +362,7 @@ margin_right = 601.0
 margin_bottom = 312.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 16 )
 icon_align = 1
@@ -374,7 +375,7 @@ margin_right = 911.856
 margin_bottom = 312.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 16 )
 icon_align = 1
@@ -386,7 +387,7 @@ margin_right = 449.0
 margin_bottom = 528.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 16 )
 icon_align = 1
@@ -399,7 +400,7 @@ margin_right = 763.0
 margin_bottom = 527.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 16 )
 icon_align = 1
@@ -411,7 +412,7 @@ margin_right = 96.0
 margin_bottom = 56.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 10 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 12 )
 icon = ExtResource( 11 )
 icon_align = 1
