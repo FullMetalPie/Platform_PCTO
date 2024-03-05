@@ -125,6 +125,8 @@
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=123]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=124]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=125]
+[ext_resource path="res://Player/Box/box.tscn" type="PackedScene" id=126]
+[ext_resource path="res://Scenes/Levels/Scatole.gd" type="Script" id=127]
 
 [sub_resource type="TileSet" id=1]
 0/name = "IndustrialTile_01.png 0"
@@ -1283,15 +1285,6 @@ extents = Vector2( 176, 32 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 112 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 48, 8 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 48, 8 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 48, 8 )
-
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 96, 8 )
 
@@ -1873,6 +1866,11 @@ use_filter = true
 extra_spacing_space = 8
 font_data = ExtResource( 125 )
 
+[sub_resource type="Curve2D" id=27]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 689, 97, 0, 0, 0, 0, 688, 733 )
+}
+
 [node name="Livello_1" type="Node2D"]
 script = ExtResource( 84 )
 
@@ -1914,18 +1912,6 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
 position = Vector2( 320, 112 )
 shape = SubResource( 5 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
-position = Vector2( 592, 456 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
-position = Vector2( 784, 456 )
-shape = SubResource( 7 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
-position = Vector2( 784, 456 )
-shape = SubResource( 8 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
 position = Vector2( 1024, 424 )
@@ -1986,7 +1972,7 @@ format = 1
 tile_data = PoolIntArray( 655365, 18, 0, 655368, 16, 0, 720898, 23, 0, 720899, 24, 0, 720900, 26, 0, 720902, 19, 0, 720903, 21, 0, 720905, 34, 0, 720937, 33, 0, 720938, 33, 0, 720939, 33, 0, 786472, 24, 0, 786473, 33, 0, 786474, 33, 0, 786475, 33, 0, 786476, 34, 0, 1048627, 24, 0, 1048628, 23, 0, 1048629, 25, 0, 1048631, 26, 0, 1048632, 34, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32, 330 )
+position = Vector2( 207, 336 )
 collision_layer = 3
 collision_mask = 3
 
@@ -2000,52 +1986,12 @@ limit_smoothed = true
 smoothing_enabled = true
 
 [node name="Transporter_right" parent="." instance=ExtResource( 83 )]
-position = Vector2( 593, 448 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_right2" parent="." instance=ExtResource( 83 )]
-position = Vector2( 785, 448 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_right3" parent="." instance=ExtResource( 83 )]
-position = Vector2( 1073, 416 )
+position = Vector2( 593, 450 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="Transporter_left" parent="." instance=ExtResource( 85 )]
-position = Vector2( 977, 416 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_left2" parent="." instance=ExtResource( 85 )]
-position = Vector2( 1585, 256 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_left4" parent="." instance=ExtResource( 85 )]
-position = Vector2( 2129, 512 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_left3" parent="." instance=ExtResource( 85 )]
-position = Vector2( 1937, 512 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_left5" parent="." instance=ExtResource( 85 )]
-position = Vector2( 2321, 512 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_right4" parent="." instance=ExtResource( 83 )]
-position = Vector2( 2769, 448 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="Transporter_right5" parent="." instance=ExtResource( 83 )]
-position = Vector2( 3633, 416 )
+position = Vector2( 785, 448 )
 collision_layer = 2
 collision_mask = 2
 
@@ -2056,6 +2002,7 @@ position = Vector2( 2061.75, 680 )
 shape = SubResource( 15 )
 
 [node name="CanvasLayer_Dead" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Popup_Dead" type="Popup" parent="CanvasLayer_Dead"]
 visible = true
@@ -2098,26 +2045,23 @@ custom_styles/normal = ExtResource( 123 )
 text = "RIPROVA"
 icon_align = 1
 
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 0, 0.762581 )
+scale = Vector2( 1, 0.992138 )
+curve = SubResource( 27 )
+script = ExtResource( 127 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 689, 97 )
+rotation = 1.57236
+
+[node name="KinematicBody2D" parent="Path2D/PathFollow2D" instance=ExtResource( 126 )]
+position = Vector2( 136.054, -10.2123 )
+
 [connection signal="body_entered" from="Transporter_right" to="." method="_on_Transporter_right_body_entered"]
 [connection signal="body_exited" from="Transporter_right" to="." method="_on_Transporter_right_body_exited"]
-[connection signal="body_entered" from="Transporter_right2" to="." method="_on_Transporter_right_body_entered"]
-[connection signal="body_exited" from="Transporter_right2" to="." method="_on_Transporter_right_body_exited"]
-[connection signal="body_entered" from="Transporter_right3" to="." method="_on_Transporter_right_body_entered"]
-[connection signal="body_exited" from="Transporter_right3" to="." method="_on_Transporter_right_body_exited"]
 [connection signal="body_entered" from="Transporter_left" to="." method="_on_Transporter_left_body_entered"]
 [connection signal="body_exited" from="Transporter_left" to="." method="_on_Transporter_left_body_exited"]
-[connection signal="body_entered" from="Transporter_left2" to="." method="_on_Transporter_left_body_entered"]
-[connection signal="body_exited" from="Transporter_left2" to="." method="_on_Transporter_left_body_exited"]
-[connection signal="body_entered" from="Transporter_left4" to="." method="_on_Transporter_left_body_entered"]
-[connection signal="body_exited" from="Transporter_left4" to="." method="_on_Transporter_left_body_exited"]
-[connection signal="body_entered" from="Transporter_left3" to="." method="_on_Transporter_left_body_entered"]
-[connection signal="body_exited" from="Transporter_left3" to="." method="_on_Transporter_left_body_exited"]
-[connection signal="body_entered" from="Transporter_left5" to="." method="_on_Transporter_left_body_entered"]
-[connection signal="body_exited" from="Transporter_left5" to="." method="_on_Transporter_left_body_exited"]
-[connection signal="body_entered" from="Transporter_right4" to="." method="_on_Transporter_right_body_entered"]
-[connection signal="body_exited" from="Transporter_right4" to="." method="_on_Transporter_right_body_exited"]
-[connection signal="body_entered" from="Transporter_right5" to="." method="_on_Transporter_right_body_entered"]
-[connection signal="body_exited" from="Transporter_right5" to="." method="_on_Transporter_right_body_exited"]
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Dead_Fall_Zone_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
