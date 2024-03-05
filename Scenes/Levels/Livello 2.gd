@@ -23,9 +23,11 @@ func _on_extinguisher_is_entered(): #vittoria
 	Global.is_Extinguisher_collected = true
 	
 func _process(_delta):
+	
 	time_now = OS.get_unix_time()
 	time_elapsed = time_now - time_start
-	$CanvasLayer/Label_FPS.text = str(Engine.get_frames_per_second()) + " FPS"
+	if Global.show_fps:
+		$CanvasLayer/Label_FPS.text = str(Engine.get_frames_per_second()) + " FPS"
 	if $Player.velocity.x != 0:
 		$Path2D_Fire.firespeed = 225
 	

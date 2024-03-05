@@ -27,6 +27,8 @@ func _on_Dead_Fall_Zone_body_entered(body):
 	$CanvasLayer_Dead/Popup_Dead.show()
 	$Player.speed = 0
 	$Path2D_Scatola1/PathFollow2D_Scatola1.offset = 0
+	
+	
 
 func _on_Button_Dead_Esci2_pressed():
 	get_tree().change_scene("res://Scenes/Menu/Main.tscn")
@@ -41,6 +43,9 @@ func _on_Button_Dead_Ripirova_pressed():
 
 #Trasportatori Livello 1
 func _process(delta):
+	if Global.show_fps:
+		$CanvasLayer_FPS/Label_FPS.text = str(Engine.get_frames_per_second()) + "FPS"
+		
 	time_now = OS.get_unix_time()
 	time_elapsed = time_now - time_start
 	

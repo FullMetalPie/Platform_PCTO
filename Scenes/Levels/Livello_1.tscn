@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=2]
+[gd_scene load_steps=165 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 1 - Factory/1 Tiles/IndustrialTile_02.png" type="Texture" id=2]
@@ -83,7 +83,7 @@
 [ext_resource path="res://Art - general/LvL 1 - Factory/1 Tiles/IndustrialTile_53.png" type="Texture" id=81]
 [ext_resource path="res://Art - general/LvL 1 - Factory/1 Tiles/IndustrialTile_47.png" type="Texture" id=82]
 [ext_resource path="res://Player/Transporter_right.tscn" type="PackedScene" id=83]
-[ext_resource path="res://Scenes/Levels/General_Path.gd" type="Script" id=84]
+[ext_resource path="res://Scenes/Levels/Livello_1.gd" type="Script" id=84]
 [ext_resource path="res://Player/Transporter_left.tscn" type="PackedScene" id=85]
 [ext_resource path="res://Art - general/LvL 1 - Factory/2 Background/Background.png" type="Texture" id=86]
 [ext_resource path="res://Art - general/LvL 1 - Factory/3 Objects/Fire-extinguisher2.png" type="Texture" id=87]
@@ -1934,6 +1934,11 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 125 )
 
+[sub_resource type="DynamicFont" id=40]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 125 )
+
 [node name="Livello_1" type="Node2D"]
 script = ExtResource( 84 )
 
@@ -2320,6 +2325,13 @@ custom_styles/pressed = ExtResource( 123 )
 custom_styles/normal = ExtResource( 123 )
 text = "VISUALIZZA I COLLEZIONABILI"
 icon_align = 1
+
+[node name="CanvasLayer_FPS" type="CanvasLayer" parent="."]
+
+[node name="Label_FPS" type="Label" parent="CanvasLayer_FPS"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 40 )
 
 [connection signal="body_entered" from="Transporter_right" to="." method="_on_Transporter_right_body_entered"]
 [connection signal="body_exited" from="Transporter_right" to="." method="_on_Transporter_right_body_exited"]
