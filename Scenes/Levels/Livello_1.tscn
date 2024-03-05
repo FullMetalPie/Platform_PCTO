@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=2]
+[gd_scene load_steps=164 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art - general/LvL 1 - Factory/1 Tiles/IndustrialTile_02.png" type="Texture" id=2]
@@ -126,6 +126,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=124]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=125]
 [ext_resource path="res://Player/Box/box.tscn" type="PackedScene" id=126]
+[ext_resource path="res://Collezionabili/Helmet_Collezionabile.tscn" type="PackedScene" id=127]
 
 [sub_resource type="TileSet" id=1]
 0/name = "IndustrialTile_01.png 0"
@@ -1915,6 +1916,24 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 3376, 256, 0, 0, 0, 0, 3376, 712 )
 }
 
+[sub_resource type="DynamicFont" id=37]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 125 )
+
+[sub_resource type="DynamicFont" id=38]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 125 )
+
+[sub_resource type="DynamicFont" id=39]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 125 )
+
 [node name="Livello_1" type="Node2D"]
 script = ExtResource( 84 )
 
@@ -2016,7 +2035,7 @@ format = 1
 tile_data = PoolIntArray( 655365, 18, 0, 655368, 16, 0, 720898, 23, 0, 720899, 24, 0, 720900, 26, 0, 720902, 19, 0, 720903, 21, 0, 720905, 34, 0, 720937, 33, 0, 720938, 33, 0, 720939, 33, 0, 786472, 24, 0, 786473, 33, 0, 786474, 33, 0, 786475, 33, 0, 786476, 34, 0, 1048627, 24, 0, 1048628, 23, 0, 1048629, 25, 0, 1048631, 26, 0, 1048632, 34, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 800, 352 )
+position = Vector2( 43, 323 )
 collision_layer = 3
 collision_mask = 3
 
@@ -2034,8 +2053,48 @@ position = Vector2( 593, 450 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="Transporter_left" parent="." instance=ExtResource( 85 )]
+[node name="Transporter_right3" parent="." instance=ExtResource( 83 )]
+position = Vector2( 1073, 416 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_right2" parent="." instance=ExtResource( 83 )]
 position = Vector2( 785, 448 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_left" parent="." instance=ExtResource( 85 )]
+position = Vector2( 977, 416 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_left2" parent="." instance=ExtResource( 85 )]
+position = Vector2( 1585, 256 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_left3" parent="." instance=ExtResource( 85 )]
+position = Vector2( 1969, 512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_left4" parent="." instance=ExtResource( 85 )]
+position = Vector2( 2161, 512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_left5" parent="." instance=ExtResource( 85 )]
+position = Vector2( 2321, 512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_right4" parent="." instance=ExtResource( 83 )]
+position = Vector2( 2769, 448 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Transporter_right5" parent="." instance=ExtResource( 83 )]
+position = Vector2( 3633, 416 )
 collision_layer = 2
 collision_mask = 2
 
@@ -2218,10 +2277,72 @@ __meta__ = {
 [node name="Box_Area2D" parent="Path2D_Scatola10/PathFollow2D_Scatola10" instance=ExtResource( 126 )]
 rotation = -1.5708
 
+[node name="Helmet_Area" parent="." instance=ExtResource( 127 )]
+position = Vector2( 3963, 373 )
+
+[node name="CanvasLayer_Win" type="CanvasLayer" parent="."]
+
+[node name="Popup_Win" type="Popup" parent="CanvasLayer_Win"]
+visible = true
+margin_left = 464.0
+margin_top = 272.0
+margin_right = 504.0
+margin_bottom = 312.0
+
+[node name="Label_Win" type="Label" parent="CanvasLayer_Win/Popup_Win"]
+margin_left = -216.0
+margin_top = -40.0
+margin_right = 312.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 37 )
+custom_styles/normal = ExtResource( 122 )
+align = 1
+
+[node name="Button_Win_Esci" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 240.0
+margin_top = 136.0
+margin_right = 296.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 38 )
+custom_styles/hover = ExtResource( 124 )
+custom_styles/pressed = ExtResource( 123 )
+custom_styles/normal = ExtResource( 123 )
+text = "ESCI"
+
+[node name="Button_Win_Coll" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 136.0
+margin_top = 80.0
+margin_right = 400.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 39 )
+custom_styles/hover = ExtResource( 124 )
+custom_styles/pressed = ExtResource( 123 )
+custom_styles/normal = ExtResource( 123 )
+text = "VISUALIZZA I COLLEZIONABILI"
+icon_align = 1
+
 [connection signal="body_entered" from="Transporter_right" to="." method="_on_Transporter_right_body_entered"]
 [connection signal="body_exited" from="Transporter_right" to="." method="_on_Transporter_right_body_exited"]
+[connection signal="body_entered" from="Transporter_right3" to="." method="_on_Transporter_right_body_entered"]
+[connection signal="body_exited" from="Transporter_right3" to="." method="_on_Transporter_right_body_exited"]
+[connection signal="body_entered" from="Transporter_right2" to="." method="_on_Transporter_right_body_entered"]
+[connection signal="body_exited" from="Transporter_right2" to="." method="_on_Transporter_right_body_exited"]
 [connection signal="body_entered" from="Transporter_left" to="." method="_on_Transporter_left_body_entered"]
 [connection signal="body_exited" from="Transporter_left" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Transporter_left2" to="." method="_on_Transporter_left_body_entered"]
+[connection signal="body_exited" from="Transporter_left2" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Transporter_left3" to="." method="_on_Transporter_left_body_entered"]
+[connection signal="body_exited" from="Transporter_left3" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Transporter_left4" to="." method="_on_Transporter_left_body_entered"]
+[connection signal="body_exited" from="Transporter_left4" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Transporter_left5" to="." method="_on_Transporter_left_body_entered"]
+[connection signal="body_exited" from="Transporter_left5" to="." method="_on_Transporter_left_body_exited"]
+[connection signal="body_entered" from="Transporter_right4" to="." method="_on_Transporter_right_body_entered"]
+[connection signal="body_exited" from="Transporter_right4" to="." method="_on_Transporter_right_body_exited"]
+[connection signal="body_entered" from="Transporter_right5" to="." method="_on_Transporter_right_body_entered"]
+[connection signal="body_exited" from="Transporter_right5" to="." method="_on_Transporter_right_body_exited"]
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Dead_Fall_Zone_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Coll" to="." method="_on_Button_Win_Coll_pressed"]
