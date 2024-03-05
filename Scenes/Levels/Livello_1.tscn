@@ -1883,7 +1883,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=30]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1616, 192, 0, 0, 0, 0, 1616, 229, 0, 0, 0, 0, 1506, 229, 0, 0, 0, 0, 1506, 704 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1616, 192, 0, 0, 0, 0, 1616, 229, 0, 0, 0, 0, 1524, 229, 0, 0, 0, 0, 1524, 698 )
 }
 
 [sub_resource type="Curve2D" id=31]
@@ -2155,7 +2155,7 @@ curve = SubResource( 27 )
 position = Vector2( 688, 194.529 )
 rotation = 1.5708
 
-[node name="Box_Area2D" parent="Path2D_Scatola1/PathFollow2D_Scatola1" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola1" parent="Path2D_Scatola1/PathFollow2D_Scatola1" instance=ExtResource( 126 )]
 position = Vector2( -0.985962, 0.0397949 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
@@ -2167,7 +2167,7 @@ curve = SubResource( 28 )
 position = Vector2( 880, 223 )
 rotation = 1.5708
 
-[node name="Box_Area2D" parent="Path2D_Scatola2/PathFollow2D_Scatola2" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola2" parent="Path2D_Scatola2/PathFollow2D_Scatola2" instance=ExtResource( 126 )]
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 
@@ -2179,7 +2179,7 @@ position = Vector2( 1200, 224 )
 rotation = -3.14159
 rotate = false
 
-[node name="Box_Area2D" parent="Path2D_Scatola3/PathFollow2D_Scatola3" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola3" parent="Path2D_Scatola3/PathFollow2D_Scatola3" instance=ExtResource( 126 )]
 rotation = -3.14159
 scale = Vector2( 0.5, 0.5 )
 
@@ -2190,7 +2190,7 @@ curve = SubResource( 30 )
 position = Vector2( 1616, 192 )
 rotation = 1.5708
 
-[node name="Box_Area2D" parent="Path2D_Scatola4/PathFollow2D_Scatola4" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola4" parent="Path2D_Scatola4/PathFollow2D_Scatola4" instance=ExtResource( 126 )]
 rotation = -1.57079
 scale = Vector2( 0.5, 0.5 )
 
@@ -2220,7 +2220,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Box_Area2D" parent="Path2D_Scatola6/PathFollow2D_Scatola6" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola6" parent="Path2D_Scatola6/PathFollow2D_Scatola6" instance=ExtResource( 126 )]
 rotation = -1.5708
 
 [node name="Path2D_Scatola7" type="Path2D" parent="."]
@@ -2231,7 +2231,7 @@ position = Vector2( 2256, 320 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Box_Area2D" parent="Path2D_Scatola7/PathFollow2D_Scatola7" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola7" parent="Path2D_Scatola7/PathFollow2D_Scatola7" instance=ExtResource( 126 )]
 rotation = -1.57079
 
 [node name="Path2D_Scatola8" type="Path2D" parent="."]
@@ -2245,7 +2245,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Box_Area2D" parent="Path2D_Scatola8/PathFollow2D_Scatola8" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola8" parent="Path2D_Scatola8/PathFollow2D_Scatola8" instance=ExtResource( 126 )]
 rotation = -1.5708
 
 [node name="Path2D_Scatola9" type="Path2D" parent="."]
@@ -2260,7 +2260,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Box_Area2D" parent="Path2D_Scatola9/PathFollow2D_Scatola9" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola9" parent="Path2D_Scatola9/PathFollow2D_Scatola9" instance=ExtResource( 126 )]
 rotation = -1.5708
 
 [node name="Path2D_Scatola10" type="Path2D" parent="."]
@@ -2274,11 +2274,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Box_Area2D" parent="Path2D_Scatola10/PathFollow2D_Scatola10" instance=ExtResource( 126 )]
+[node name="Box_Area2D_Scatola10" parent="Path2D_Scatola10/PathFollow2D_Scatola10" instance=ExtResource( 126 )]
 rotation = -1.5708
 
 [node name="Helmet_Area" parent="." instance=ExtResource( 127 )]
-position = Vector2( 3963, 373 )
+position = Vector2( 4068, 371 )
 
 [node name="CanvasLayer_Win" type="CanvasLayer" parent="."]
 
@@ -2344,5 +2344,15 @@ icon_align = 1
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Dead_Fall_Zone_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
+[connection signal="body_entered" from="Path2D_Scatola1/PathFollow2D_Scatola1/Box_Area2D_Scatola1" to="." method="_on_Box_Area2D_Scatola1_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola2/PathFollow2D_Scatola2/Box_Area2D_Scatola2" to="." method="_on_Box_Area2D_Scatola2_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola3/PathFollow2D_Scatola3/Box_Area2D_Scatola3" to="." method="_on_Box_Area2D_Scatola3_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola4/PathFollow2D_Scatola4/Box_Area2D_Scatola4" to="." method="_on_Box_Area2D_Scatola4_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola5/PathFollow2D_Scatola5/Box_Area2D_Scatola5" to="." method="_on_Box_Area2D_Scatola5_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola6/PathFollow2D_Scatola6/Box_Area2D_Scatola6" to="." method="_on_Box_Area2D_Scatola6_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola7/PathFollow2D_Scatola7/Box_Area2D_Scatola7" to="." method="_on_Box_Area2D_Scatola7_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola8/PathFollow2D_Scatola8/Box_Area2D_Scatola8" to="." method="_on_Box_Area2D_Scatola8_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola9/PathFollow2D_Scatola9/Box_Area2D_Scatola9" to="." method="_on_Box_Area2D_Scatola9_body_entered"]
+[connection signal="body_entered" from="Path2D_Scatola10/PathFollow2D_Scatola10/Box_Area2D_Scatola10" to="." method="_on_Box_Area2D_Scatola10_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Coll" to="." method="_on_Button_Win_Coll_pressed"]
