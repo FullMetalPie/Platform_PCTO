@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jingle_prova.mp3-3324e79562ff6497fe4d176eb377c4b3.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Menu/Utility files/jingle_prova.mp3"
+dest_files=[ "res://.import/jingle_prova.mp3-3324e79562ff6497fe4d176eb377c4b3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
