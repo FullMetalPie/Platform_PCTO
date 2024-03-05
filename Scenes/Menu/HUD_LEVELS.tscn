@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/new_styleboxflat.tres" type="StyleBox" id=2]
@@ -8,9 +8,17 @@
 [ext_resource path="res://Scenes/Menu/Utility files/arrow.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=7]
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_DISABLED.tres" type="StyleBox" id=9]
+[ext_resource path="res://Scenes/Menu/Utility files/padlock_small.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=11]
+[ext_resource path="res://Scenes/Menu/Utility files/tickù.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=13]
+[ext_resource path="res://Scenes/Menu/Utility files/lvl_disabled.tres" type="StyleBox" id=14]
 
 [sub_resource type="GDScript" id=8]
 script/source = "extends CanvasLayer
+
+onready var popUp_lock = $Popup_Lock
 
 signal lev_1
 signal lev_2
@@ -24,7 +32,14 @@ signal lev_5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Global.is_Helmet_collected:
+		$Locked_2.hide()
+	if Global.is_Extinguisher_collected:
+		$Locked_3.hide()
+	if Global.is_Mask_collected:
+		$Locked_4.hide()
+	if Global.is_Reflective_Suit_collected:
+		$Locked_5.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +51,6 @@ func _on_Lev_1_pressed():
 	#emit_signal(\"lev_1\")
 	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
 func _on_Lev_2_pressed():
-	#emit_signal(\"lev_2\")
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
 	
 func _on_Lev_3_pressed():
@@ -52,28 +66,95 @@ func _on_Lev_5_pressed():
 
 func _on_Exit_pressed():
 	get_tree().change_scene(\"res://Scenes/Menu/Main.tscn\")
+
+func disable_and_show():
+	popUp_lock.show()
+	$Lev_1.disabled = true
+	$Lev_2.disabled = true
+	$Lev_3.disabled = true
+	$Lev_4.disabled = true
+	$Lev_5.disabled = true
+	$Locked_2.disabled = true
+	$Locked_3.disabled = true
+	$Locked_4.disabled = true
+	$Locked_5.disabled = true
+	$Exit.disabled = true
+	$Title.add_color_override(\"font_color\", Color.black)
+
+func enable_and_hide():
+	popUp_lock.hide()
+	$Lev_1.disabled = false
+	$Lev_2.disabled = false
+	$Lev_3.disabled = false
+	$Lev_4.disabled = false
+	$Lev_5.disabled = false
+	$Locked_2.disabled = false
+	$Locked_3.disabled = false
+	$Locked_4.disabled = false
+	$Locked_5.disabled = false
+	$Exit.disabled = false
+	$Title.add_color_override(\"font_color\", Color.white)
+
+
+func _on_Locked_2_pressed():
+	disable_and_show()
+
+
+func _on_Locked_3_pressed():
+	disable_and_show()
+
+
+func _on_Locked_4_pressed():
+	disable_and_show()
+
+
+func _on_Locked_5_pressed():
+	disable_and_show()
+
+
+func _on_Button_Lock_pressed():
+	enable_and_hide()
 "
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
 outline_size = 9
 outline_color = Color( 0.282353, 0.286275, 0.211765, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [node name="HUD_LEVELS" type="CanvasLayer"]
@@ -100,6 +181,7 @@ margin_bottom = 523.8
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 14 )
 custom_styles/normal = ExtResource( 2 )
 text = "LIVELLO 5"
 
@@ -111,6 +193,7 @@ margin_bottom = 447.0
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 14 )
 custom_styles/normal = ExtResource( 2 )
 text = "LIVELLO 4"
 
@@ -122,6 +205,7 @@ margin_bottom = 359.0
 custom_fonts/font = SubResource( 5 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 14 )
 custom_styles/normal = ExtResource( 2 )
 text = "LIVELLO 3"
 
@@ -133,6 +217,7 @@ margin_bottom = 271.0
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 14 )
 custom_styles/normal = ExtResource( 2 )
 text = "LIVELLO 2"
 
@@ -144,6 +229,7 @@ margin_bottom = 185.0
 custom_fonts/font = SubResource( 2 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 14 )
 custom_styles/normal = ExtResource( 2 )
 text = "LIVELLO 1"
 
@@ -154,8 +240,86 @@ margin_right = 96.0
 margin_bottom = 56.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 13 )
 custom_styles/normal = ExtResource( 8 )
 icon = ExtResource( 6 )
+icon_align = 1
+
+[node name="Locked_2" type="Button" parent="."]
+margin_left = 459.0
+margin_top = 240.0
+margin_right = 567.0
+margin_bottom = 276.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 13 )
+custom_styles/normal = ExtResource( 5 )
+icon = ExtResource( 10 )
+icon_align = 1
+
+[node name="Locked_3" type="Button" parent="."]
+margin_left = 459.0
+margin_top = 328.0
+margin_right = 565.0
+margin_bottom = 364.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 13 )
+custom_styles/normal = ExtResource( 5 )
+icon = ExtResource( 10 )
+icon_align = 1
+
+[node name="Locked_4" type="Button" parent="."]
+margin_left = 459.0
+margin_top = 416.0
+margin_right = 566.0
+margin_bottom = 452.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 13 )
+custom_styles/normal = ExtResource( 5 )
+icon = ExtResource( 10 )
+icon_align = 1
+
+[node name="Locked_5" type="Button" parent="."]
+margin_left = 459.0
+margin_top = 503.0
+margin_right = 565.0
+margin_bottom = 539.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 13 )
+custom_styles/normal = ExtResource( 5 )
+icon = ExtResource( 10 )
+icon_align = 1
+
+[node name="Popup_Lock" type="Popup" parent="."]
+margin_left = 472.0
+margin_top = 304.0
+margin_right = 512.0
+margin_bottom = 344.0
+
+[node name="Label_Lock" type="Label" parent="Popup_Lock"]
+margin_left = -400.0
+margin_top = -72.0
+margin_right = 504.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = ExtResource( 11 )
+text = "Completa il livello precedente per accedere a quello selezionato"
+align = 1
+valign = 3
+
+[node name="Button_Lock" type="Button" parent="Popup_Lock/Label_Lock"]
+margin_left = 416.0
+margin_top = 48.0
+margin_right = 496.0
+margin_bottom = 104.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 5 )
+icon = ExtResource( 12 )
 icon_align = 1
 
 [connection signal="pressed" from="Lev_5" to="." method="_on_Lev_5_pressed"]
@@ -164,3 +328,8 @@ icon_align = 1
 [connection signal="pressed" from="Lev_2" to="." method="_on_Lev_2_pressed"]
 [connection signal="pressed" from="Lev_1" to="." method="_on_Lev_1_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Locked_2" to="." method="_on_Locked_2_pressed"]
+[connection signal="pressed" from="Locked_3" to="." method="_on_Locked_3_pressed"]
+[connection signal="pressed" from="Locked_4" to="." method="_on_Locked_4_pressed"]
+[connection signal="pressed" from="Locked_5" to="." method="_on_Locked_5_pressed"]
+[connection signal="pressed" from="Popup_Lock/Label_Lock/Button_Lock" to="." method="_on_Button_Lock_pressed"]
