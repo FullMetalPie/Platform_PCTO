@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_PRESSED.tres" type="StyleBox" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW.tres" type="StyleBox" id=12]
 [ext_resource path="res://Scenes/Menu/Utility files/X.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=14]
-[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_DISABLED.tres" type="StyleBox" id=15]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=17]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=18]
@@ -336,7 +335,7 @@ margin_right = 298.0
 margin_bottom = 312.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 4 )
 icon_align = 1
@@ -348,7 +347,7 @@ margin_right = 602.0
 margin_bottom = 312.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 6 )
 icon_align = 1
@@ -360,7 +359,7 @@ margin_right = 918.0
 margin_bottom = 312.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 9 )
 icon_align = 1
@@ -374,7 +373,7 @@ margin_right = 433.616
 margin_bottom = 511.8
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 8 )
 icon_align = 1
@@ -388,7 +387,7 @@ margin_right = 818.32
 margin_bottom = 528.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 15 )
+custom_styles/disabled = ExtResource( 18 )
 custom_styles/normal = ExtResource( 3 )
 icon = ExtResource( 7 )
 icon_align = 1
