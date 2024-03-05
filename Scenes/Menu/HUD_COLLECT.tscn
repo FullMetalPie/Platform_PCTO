@@ -83,6 +83,11 @@ func _on_Col_1_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
 	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
@@ -98,8 +103,13 @@ func _on_Button_X_Pop1_pressed():
 	$Col_2.disabled = false
 	$Col_3.disabled = false
 	$Col_4.disabled = false
-	$Col_5.disabled = false
+	$Col_5.disabled = false	
 	$Exit.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
 
 
@@ -111,6 +121,11 @@ func _on_Button_X_Pop2_pressed():
 	$Col_4.disabled = false
 	$Col_5.disabled = false
 	$Exit.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
 
 
@@ -122,6 +137,11 @@ func _on_Col_2_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
 	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
@@ -133,6 +153,11 @@ func _on_Col_3_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
 	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
@@ -144,6 +169,11 @@ func _on_Button_X_Pop3_pressed():
 	$Col_4.disabled = false
 	$Col_5.disabled = false
 	$Exit.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
 
 
@@ -155,6 +185,11 @@ func _on_Col_4_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
 	$Title.add_color_override(\"font_color\", \"#272727\")
 
 
@@ -166,6 +201,11 @@ func _on_Button_X_Pop4_pressed():
 	$Col_4.disabled = false
 	$Col_5.disabled = false
 	$Exit.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
 
 
@@ -177,6 +217,11 @@ func _on_Col_5_pressed():
 	$Col_4.disabled = true
 	$Col_5.disabled = true
 	$Exit.disabled = true
+	$Col_1_False.disabled = true
+	$Col_2_False.disabled = true
+	$Col_3_False.disabled = true
+	$Col_4_False.disabled = true
+	$Col_5_False.disabled = true
 	$Title.add_color_override(\"font_color\", \"#272727\")
 	
 
@@ -190,6 +235,11 @@ func _on_Button_X_Pop5_pressed():
 	$Col_4.disabled = false
 	$Col_5.disabled = false
 	$Exit.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
 	$Title.add_color_override(\"font_color\", Color.white)
 
 
