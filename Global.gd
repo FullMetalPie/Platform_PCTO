@@ -6,6 +6,8 @@ var is_Mask_collected = false
 var is_Face_Mask_collected = false
 var is_Reflective_Suit_collected = false
 
+var show_fps = false
+var volume = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
