@@ -49,7 +49,6 @@ func _physics_process(delta):
 func death():
 	is_dead = true
 	velocity = Vector2.ZERO
-	$CollisionShape2D.disabled = true
 	$AnimatedSprite.play("Death")
 		
 
