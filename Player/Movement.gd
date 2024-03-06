@@ -53,4 +53,3 @@ func death():
 	$AnimatedSprite.play("Death")
 		
 
-	
