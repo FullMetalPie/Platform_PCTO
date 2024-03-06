@@ -1,0 +1,463 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art - general/LvL4 - Car/City_Transparent.png" type="Texture" id=2]
+[ext_resource path="res://Art - general/LvL4 - Car/CCity_mockup.png" type="Texture" id=3]
+[ext_resource path="res://Art - general/LvL 2 - Forest/Forest_tileset.png" type="Texture" id=4]
+[ext_resource path="res://Art - general/LvL4 - Car/buildings.png" type="Texture" id=5]
+[ext_resource path="res://Art - general/LvL4 - Car/sky.png" type="Texture" id=6]
+[ext_resource path="res://Art - general/LvL4 - Car/Macchine/Jeep_Car1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Levels/Path_High.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Levels/Path_Middle.gd" type="Script" id=9]
+[ext_resource path="res://Art - general/LvL4 - Car/Macchine/Volvo_Car.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Levels/Path_Low.gd" type="Script" id=11]
+[ext_resource path="res://Art - general/LvL4 - Car/Macchine/Jeep_Car2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Levels/Livello_4.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=14]
+[ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=15]
+[ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=16]
+[ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=17]
+[ext_resource path="res://Collezionabili/Reflective_Suit_Collezionabile.tscn" type="PackedScene" id=18]
+
+[sub_resource type="TileSet" id=1]
+0/name = "City_Transparent.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 640, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "CCity_mockup.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 640, 32 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "CCity_mockup.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 640, 256 )
+2/tile_mode = 2
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 32, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Forest_tileset.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 96, 96 )
+3/tile_mode = 2
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 32, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2702.94, 23.5 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 2312, -624 )
+b = Vector2( 2304, 0 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( 0, -87 )
+b = Vector2( 0, 513 )
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5520, 520, 0, 0, 0, 0, -48, 520 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5520, 496, 0, 0, 0, 0, -48, 496 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5528, 536, 0, 0, 0, 0, -40, 536 )
+}
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=9]
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=10]
+use_filter = true
+extra_spacing_space = 8
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=11]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=12]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=13]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 17 )
+
+[node name="Livello_4" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer_Night" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer_Night"]
+margin_left = -512.0
+margin_top = -393.0
+margin_right = 512.0
+margin_bottom = 375.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="ParallaxLayer_Buidings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer_Buidings"]
+margin_top = 16.0
+margin_right = 1026.0
+margin_bottom = 624.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 87 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 851968, 2, 262148, 851969, 2, 262148, 851970, 2, 262148, 851971, 2, 262148, 851972, 2, 262148, 851973, 2, 262148, 851974, 2, 262148, 851975, 2, 262148, 851976, 2, 262148, 851977, 2, 262148, 851978, 2, 262148, 851979, 2, 262148, 851980, 2, 262148, 851981, 2, 262148, 851982, 2, 262148, 851983, 2, 262148, 851984, 2, 262148, 851985, 2, 262148, 851986, 2, 262148, 851987, 2, 262148, 851988, 2, 262148, 851989, 2, 262148, 851990, 2, 262148, 851991, 2, 262148, 851992, 2, 262148, 851993, 2, 262148, 851994, 2, 262148, 851995, 2, 262148, 851996, 2, 262148, 851997, 2, 262148, 851998, 2, 262148, 851999, 2, 262148, 852000, 2, 262148, 852001, 2, 262148, 852002, 2, 262148, 852003, 2, 262148, 852004, 2, 262148, 852005, 2, 262148, 852006, 2, 262148, 852007, 2, 262148, 852008, 2, 262148, 852009, 2, 262148, 852010, 2, 262148, 852011, 2, 262148, 852012, 2, 262148, 852013, 2, 262148, 852014, 2, 262148, 852015, 2, 262148, 852016, 2, 262148, 852017, 2, 262148, 852018, 2, 262148, 852019, 2, 262148, 852020, 2, 262148, 852021, 2, 262148, 852022, 2, 262148, 852023, 2, 262148, 852024, 2, 262148, 852025, 2, 262148, 852026, 2, 262148, 852027, 2, 262148, 852028, 2, 262148, 852029, 2, 262148, 852030, 2, 262148, 852031, 2, 262148, 852032, 2, 262148, 852033, 2, 262148, 852034, 2, 262148, 852035, 2, 262148, 852036, 2, 262148, 852037, 2, 262148, 852038, 2, 262148, 852039, 2, 262148, 852040, 2, 262148, 852041, 2, 262148, 852042, 2, 262148, 852043, 2, 262148, 852044, 2, 262148, 852045, 2, 262148, 852046, 2, 262148, 852047, 2, 262148, 852048, 2, 262148, 852049, 2, 262148, 852050, 2, 262148, 852051, 2, 262148, 852052, 2, 262148, 852053, 2, 262148, 852054, 2, 262148, 852055, 2, 262148, 852056, 2, 262148, 852057, 2, 262148, 852058, 2, 262148, 852059, 2, 262148, 852060, 2, 262148, 852061, 2, 262148, 852062, 2, 262148, 852063, 2, 262148, 852064, 2, 262148, 852065, 2, 262148, 852066, 2, 262148, 852067, 2, 262148, 852068, 2, 262148, 852069, 2, 262148, 852070, 2, 262148, 852071, 2, 262148, 852072, 2, 262148, 852073, 2, 262148, 852074, 2, 262148, 852075, 2, 262148, 852076, 2, 262148, 852077, 2, 262148, 852078, 2, 262148, 852079, 2, 262148, 852080, 2, 262148, 852081, 2, 262148, 852082, 2, 262148, 852083, 2, 262148, 852084, 2, 262148, 852085, 2, 262148, 852086, 2, 262148, 852087, 2, 262148, 852088, 2, 262148, 852089, 2, 262148, 852090, 2, 262148, 852091, 2, 262148, 852092, 2, 262148, 852093, 2, 262148, 852094, 2, 262148, 852095, 2, 262148, 852096, 2, 262148, 852097, 2, 262148, 852098, 2, 262148, 852099, 2, 262148, 852100, 2, 262148, 852101, 2, 262148, 852102, 2, 262148, 852103, 2, 262148, 852104, 2, 262148, 852105, 2, 262148, 852106, 2, 262148, 852107, 2, 262148, 852108, 2, 262148, 852109, 2, 262148, 852110, 2, 262148, 852111, 2, 262148, 852112, 2, 262148, 852113, 2, 262148, 852114, 2, 262148, 852115, 2, 262148, 852116, 2, 262148, 852117, 2, 262148, 852118, 2, 262148, 852119, 2, 262148, 852120, 2, 262148, 852121, 2, 262148, 852122, 2, 262148, 852123, 2, 262148, 852124, 2, 262148, 852125, 2, 262148, 852126, 2, 262148, 852127, 2, 262148, 852128, 2, 262148, 852129, 2, 262148, 852130, 2, 262148, 852131, 2, 262148, 852132, 2, 262148, 852133, 2, 262148, 852134, 2, 262148, 852135, 2, 262148, 852136, 2, 262148, 917504, 2, 262148, 917505, 2, 262148, 917506, 2, 262148, 917507, 2, 262148, 917508, 2, 262148, 917509, 2, 262148, 917510, 2, 262148, 917511, 2, 262148, 917512, 2, 262148, 917513, 2, 262152, 917514, 2, 262152, 917515, 2, 262152, 917516, 2, 262152, 917517, 2, 262148, 917518, 2, 262148, 917519, 2, 262148, 917520, 2, 262148, 917521, 2, 262148, 917522, 2, 262148, 917523, 2, 262148, 917524, 2, 262148, 917525, 2, 262148, 917526, 2, 262148, 917527, 2, 262148, 917528, 2, 262148, 917529, 2, 262148, 917530, 2, 262148, 917531, 2, 262148, 917532, 2, 262148, 917533, 2, 262148, 917534, 2, 262148, 917535, 2, 262148, 917536, 2, 262148, 917537, 2, 262148, 917538, 2, 262148, 917539, 2, 262148, 917540, 2, 262148, 917541, 2, 262148, 917542, 2, 262148, 917543, 2, 262148, 917544, 2, 262148, 917545, 2, 262152, 917546, 2, 262152, 917547, 2, 262152, 917548, 2, 262152, 917549, 2, 262148, 917550, 2, 262148, 917551, 2, 262148, 917552, 2, 262148, 917553, 2, 262148, 917554, 2, 262148, 917555, 2, 262148, 917556, 2, 262148, 917557, 2, 262148, 917558, 2, 262148, 917559, 2, 262148, 917560, 2, 262148, 917561, 2, 262148, 917562, 2, 262148, 917563, 2, 262148, 917564, 2, 262148, 917565, 2, 262148, 917566, 2, 262148, 917567, 2, 262148, 917568, 2, 262148, 917569, 2, 262148, 917570, 2, 262148, 917571, 2, 262148, 917572, 2, 262148, 917573, 2, 262148, 917574, 2, 262148, 917575, 2, 262148, 917576, 2, 262148, 917577, 2, 262152, 917578, 2, 262152, 917579, 2, 262152, 917580, 2, 262152, 917581, 2, 262148, 917582, 2, 262148, 917583, 2, 262148, 917584, 2, 262148, 917585, 2, 262148, 917586, 2, 262148, 917587, 2, 262148, 917588, 2, 262148, 917589, 2, 262148, 917590, 2, 262148, 917591, 2, 262148, 917592, 2, 262148, 917593, 2, 262148, 917594, 2, 262148, 917595, 2, 262148, 917596, 2, 262148, 917597, 2, 262148, 917598, 2, 262148, 917599, 2, 262148, 917600, 2, 262152, 917601, 2, 262148, 917602, 2, 262148, 917603, 2, 262148, 917604, 2, 262148, 917605, 2, 262148, 917606, 2, 262148, 917607, 2, 262148, 917608, 2, 262148, 917609, 2, 262148, 917610, 2, 262148, 917611, 2, 262148, 917612, 2, 262148, 917613, 2, 262148, 917614, 2, 262148, 917615, 2, 262148, 917616, 2, 262148, 917617, 2, 262148, 917618, 2, 262148, 917619, 2, 262148, 917620, 2, 262148, 917621, 2, 262148, 917622, 2, 262148, 917623, 2, 262148, 917624, 2, 262148, 917625, 2, 262148, 917626, 2, 262152, 917627, 2, 262152, 917628, 2, 262152, 917629, 2, 262152, 917630, 2, 262148, 917631, 2, 262148, 917632, 2, 262148, 917633, 2, 262148, 917634, 2, 262148, 917635, 2, 262148, 917636, 2, 262148, 917637, 2, 262148, 917638, 2, 262148, 917639, 2, 262148, 917640, 2, 262148, 917641, 2, 262148, 917642, 2, 262148, 917643, 2, 262148, 917644, 2, 262148, 917645, 2, 262148, 917646, 2, 262148, 917647, 2, 262148, 917648, 2, 262148, 917649, 2, 262152, 917650, 2, 262148, 917651, 2, 262148, 917652, 2, 262148, 917653, 2, 262148, 917654, 2, 262148, 917655, 2, 262148, 917656, 2, 262148, 917657, 2, 262148, 917658, 2, 262148, 917659, 2, 262148, 917660, 2, 262148, 917661, 2, 262148, 917662, 2, 262148, 917663, 2, 262148, 917664, 2, 262148, 917665, 2, 262148, 917666, 2, 262148, 917667, 2, 262148, 917668, 2, 262148, 917669, 2, 262148, 917670, 2, 262148, 917671, 2, 262148, 917672, 2, 262148, 983040, 2, 262152, 983041, 2, 262152, 983042, 2, 262152, 983043, 2, 262152, 983044, 2, 262152, 983045, 2, 262152, 983046, 2, 262152, 983047, 2, 262152, 983048, 2, 262152, 983049, 2, 262152, 983050, 2, 262152, 983051, 2, 262152, 983052, 2, 262152, 983053, 2, 262152, 983054, 2, 262152, 983055, 2, 262152, 983056, 2, 262152, 983057, 2, 262152, 983058, 2, 262152, 983059, 2, 262152, 983060, 2, 262152, 983061, 2, 262152, 983062, 2, 262152, 983063, 2, 262152, 983064, 2, 262152, 983065, 2, 262152, 983066, 2, 262152, 983067, 2, 262152, 983068, 2, 262152, 983069, 2, 262152, 983070, 2, 262152, 983071, 2, 262152, 983072, 2, 262152, 983073, 2, 262152, 983074, 2, 262152, 983075, 2, 262152, 983076, 2, 262152, 983077, 2, 262152, 983078, 2, 262152, 983079, 2, 262152, 983080, 2, 262152, 983081, 2, 262152, 983082, 2, 262152, 983083, 2, 262152, 983084, 2, 262152, 983085, 2, 262152, 983086, 2, 262152, 983087, 2, 262152, 983088, 2, 262152, 983089, 2, 262152, 983090, 2, 262152, 983091, 2, 262152, 983092, 2, 262152, 983093, 2, 262152, 983094, 2, 262152, 983095, 2, 262152, 983096, 2, 262152, 983097, 2, 262152, 983098, 2, 262152, 983099, 2, 262152, 983100, 2, 262152, 983101, 2, 262152, 983102, 2, 262152, 983103, 2, 262152, 983104, 2, 262152, 983105, 2, 262152, 983106, 2, 262152, 983107, 2, 262152, 983108, 2, 262152, 983109, 2, 262152, 983110, 2, 262152, 983111, 2, 262152, 983112, 2, 262152, 983113, 2, 262152, 983114, 2, 262152, 983115, 2, 262152, 983116, 2, 262152, 983117, 2, 262152, 983118, 2, 262152, 983119, 2, 262152, 983120, 2, 262152, 983121, 2, 262152, 983122, 2, 262152, 983123, 2, 262152, 983124, 2, 262152, 983125, 2, 262152, 983126, 2, 262152, 983127, 2, 262152, 983128, 2, 262152, 983129, 2, 262152, 983130, 2, 262152, 983131, 2, 262152, 983132, 2, 262152, 983133, 2, 262152, 983134, 2, 262152, 983135, 2, 262152, 983136, 2, 262152, 983137, 2, 262152, 983138, 2, 262152, 983139, 2, 262152, 983140, 2, 262152, 983141, 2, 262152, 983142, 2, 262152, 983143, 2, 262152, 983144, 2, 262152, 983145, 2, 262152, 983146, 2, 262152, 983147, 2, 262152, 983148, 2, 262152, 983149, 2, 262152, 983150, 2, 262152, 983151, 2, 262152, 983152, 2, 262152, 983153, 2, 262152, 983154, 2, 262152, 983155, 2, 262152, 983156, 2, 262152, 983157, 2, 262152, 983158, 2, 262152, 983159, 2, 262152, 983160, 2, 262152, 983161, 2, 262152, 983162, 2, 262152, 983163, 2, 262152, 983164, 2, 262152, 983165, 2, 262152, 983166, 2, 262152, 983167, 2, 262152, 983168, 2, 262152, 983169, 2, 262152, 983170, 2, 262152, 983171, 2, 262152, 983172, 2, 262152, 983173, 2, 262152, 983174, 2, 262152, 983175, 2, 262152, 983176, 2, 262152, 983177, 2, 262152, 983178, 2, 262152, 983179, 2, 262152, 983180, 2, 262152, 983181, 2, 262152, 983182, 2, 262152, 983183, 2, 262152, 983184, 2, 262152, 983185, 2, 262152, 983186, 2, 262152, 983187, 2, 262152, 983188, 2, 262152, 983189, 2, 262152, 983190, 2, 262152, 983191, 2, 262152, 983192, 2, 262152, 983193, 2, 262152, 983194, 2, 262152, 983195, 2, 262152, 983196, 2, 262152, 983197, 2, 262152, 983198, 2, 262152, 983199, 2, 262152, 983200, 2, 262152, 983201, 2, 262152, 983202, 2, 262152, 983203, 2, 262152, 983204, 2, 262152, 983205, 2, 262152, 983206, 2, 262152, 983207, 2, 262152, 983208, 2, 262152 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="TileMap"]
+mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
+position = Vector2( 2705.06, 489.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
+position = Vector2( 3104, 513 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
+shape = SubResource( 7 )
+
+[node name="Path2D_Corsia_Alta" type="Path2D" parent="."]
+curve = SubResource( 4 )
+script = ExtResource( 8 )
+
+[node name="PathFollow2D_Corsia_Alta" type="PathFollow2D" parent="Path2D_Corsia_Alta"]
+position = Vector2( 5520, 520 )
+rotation = 3.14159
+
+[node name="Jeep_Car1" parent="Path2D_Corsia_Alta/PathFollow2D_Corsia_Alta" instance=ExtResource( 7 )]
+modulate = Color( 0.352941, 0.352941, 0.352941, 1 )
+position = Vector2( 0, 12 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.6 )
+
+[node name="PathFollow2D_Corsia_Alta_3" type="PathFollow2D" parent="Path2D_Corsia_Alta"]
+position = Vector2( 5520, 520 )
+rotation = 3.14159
+
+[node name="Volvo_Car" parent="Path2D_Corsia_Alta/PathFollow2D_Corsia_Alta_3" instance=ExtResource( 10 )]
+modulate = Color( 0.352941, 0.352941, 0.352941, 1 )
+position = Vector2( 6, 12 )
+rotation = -3.14159
+scale = Vector2( 0.4, 0.4 )
+
+[node name="PathFollow2D_Corsia_Alta_2" type="PathFollow2D" parent="Path2D_Corsia_Alta"]
+position = Vector2( 5520, 520 )
+rotation = 3.14159
+
+[node name="Jeep_Car2" parent="Path2D_Corsia_Alta/PathFollow2D_Corsia_Alta_2" instance=ExtResource( 12 )]
+modulate = Color( 0.352941, 0.352941, 0.352941, 1 )
+position = Vector2( 6, -4 )
+rotation = -3.14159
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 432 )
+collision_layer = 15
+collision_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 5406
+limit_bottom = 600
+limit_smoothed = true
+
+[node name="Path2D_Corsia_Media" type="Path2D" parent="."]
+position = Vector2( 0, 56 )
+curve = SubResource( 5 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D_Corsia_Media" type="PathFollow2D" parent="Path2D_Corsia_Media"]
+position = Vector2( 5520, 496 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Volvo_Car" parent="Path2D_Corsia_Media/PathFollow2D_Corsia_Media" instance=ExtResource( 10 )]
+position = Vector2( 0, 27 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.8 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="PathFollow2D_Corsia_Media_2" type="PathFollow2D" parent="Path2D_Corsia_Media"]
+position = Vector2( 5520, 496 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Jeep_Car1" parent="Path2D_Corsia_Media/PathFollow2D_Corsia_Media_2" instance=ExtResource( 7 )]
+position = Vector2( -13, 26 )
+rotation = 3.14159
+scale = Vector2( 1.3, 1.3 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="PathFollow2D_Corsia_Media_3" type="PathFollow2D" parent="Path2D_Corsia_Media"]
+position = Vector2( 5520, 496 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Jeep_Car2" parent="Path2D_Corsia_Media/PathFollow2D_Corsia_Media_3" instance=ExtResource( 12 )]
+position = Vector2( 1, -8 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.5 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="Path2D_Corsia_Bassa" type="Path2D" parent="."]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( -8, 48 )
+curve = SubResource( 6 )
+script = ExtResource( 11 )
+
+[node name="PathFollow2D_Corsia_Bassa_3" type="PathFollow2D" parent="Path2D_Corsia_Bassa"]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 5528, 536 )
+rotation = 3.14159
+scale = Vector2( 1.4, 1.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Jeep_Car1" parent="Path2D_Corsia_Bassa/PathFollow2D_Corsia_Bassa_3" instance=ExtResource( 7 )]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 0, 27 )
+rotation = 3.14159
+scale = Vector2( 1.7, 1.7 )
+
+[node name="PathFollow2D_Corsia_Bassa_2" type="PathFollow2D" parent="Path2D_Corsia_Bassa"]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 5528, 536 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Volvo_Car" parent="Path2D_Corsia_Bassa/PathFollow2D_Corsia_Bassa_2" instance=ExtResource( 10 )]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 3, 24 )
+rotation = 3.14159
+scale = Vector2( 1.4, 1.4 )
+
+[node name="PathFollow2D_Corsia_Bassa" type="PathFollow2D" parent="Path2D_Corsia_Bassa"]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 5528, 536 )
+rotation = 3.14159
+
+[node name="Jeep_Car2" parent="Path2D_Corsia_Bassa/PathFollow2D_Corsia_Bassa" instance=ExtResource( 12 )]
+modulate = Color( 0.831373, 1, 0.458824, 1 )
+position = Vector2( 7, -17 )
+rotation = 3.14159
+scale = Vector2( 1.1, 1.1 )
+
+[node name="CanvasLayer_Dead" type="CanvasLayer" parent="."]
+
+[node name="Popup_Dead" type="Popup" parent="CanvasLayer_Dead"]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label_Dead" type="Label" parent="CanvasLayer_Dead/Popup_Dead"]
+margin_left = 248.0
+margin_top = 232.0
+margin_right = 776.0
+margin_bottom = 424.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/normal = ExtResource( 15 )
+text = "
+HAI PERSO!"
+align = 1
+
+[node name="Button_Dead_Esci2" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+margin_left = 208.0
+margin_top = 128.0
+margin_right = 328.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+text = "ESCI"
+
+[node name="Button_Dead_Ripirova" type="Button" parent="CanvasLayer_Dead/Popup_Dead/Label_Dead"]
+anchor_right = 0.099
+anchor_bottom = 0.122
+margin_left = 208.0
+margin_top = 64.0
+margin_right = 275.728
+margin_bottom = 82.576
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+text = "RIPROVA"
+icon_align = 1
+
+[node name="Reflective_Suit_Area" parent="." instance=ExtResource( 18 )]
+position = Vector2( 5347, 536 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CanvasLayer_Win" type="CanvasLayer" parent="."]
+
+[node name="Popup_Win" type="Popup" parent="CanvasLayer_Win"]
+visible = true
+margin_left = 464.0
+margin_top = 272.0
+margin_right = 504.0
+margin_bottom = 312.0
+
+[node name="Label_Win" type="Label" parent="CanvasLayer_Win/Popup_Win"]
+margin_left = -216.0
+margin_top = -40.0
+margin_right = 312.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/normal = ExtResource( 15 )
+align = 1
+
+[node name="Button_Win_Esci" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 240.0
+margin_top = 136.0
+margin_right = 296.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+text = "ESCI"
+
+[node name="Button_Win_Coll" type="Button" parent="CanvasLayer_Win/Popup_Win/Label_Win"]
+margin_left = 136.0
+margin_top = 80.0
+margin_right = 400.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+text = "VISUALIZZA I COLLEZIONABILI"
+icon_align = 1
+
+[node name="CanvasLayer_FPS" type="CanvasLayer" parent="."]
+
+[node name="Label_FPS" type="Label" parent="CanvasLayer_FPS"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 14 )
+
+[connection signal="body_entered" from="Path2D_Corsia_Media/PathFollow2D_Corsia_Media/Volvo_Car" to="." method="_on_Volvo_Car_body_entered"]
+[connection signal="body_entered" from="Path2D_Corsia_Media/PathFollow2D_Corsia_Media_2/Jeep_Car1" to="." method="_on_Jeep_Car1_body_entered"]
+[connection signal="body_entered" from="Path2D_Corsia_Media/PathFollow2D_Corsia_Media_3/Jeep_Car2" to="." method="_on_Jeep_Car2_body_entered"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]
+[connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Ripirova" to="." method="_on_Button_Dead_Ripirova_pressed"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
+[connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Coll" to="." method="_on_Button_Win_Coll_pressed"]
