@@ -69,40 +69,42 @@ animations = [ {
 "speed": 50.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 15.577
-height = 92.4208
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.8331, 46.3746 )
 
 [node name="Gas" type="Area2D"]
+position = Vector2( 0, 0.005 )
+rotation = -0.0349066
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.176471, 0.686275, 0.231373, 1 )
-position = Vector2( 46, -21 )
-scale = Vector2( 1, 0.786689 )
+position = Vector2( 28.75, -26.125 )
+scale = Vector2( 0.658416, 0.751706 )
 frames = SubResource( 1 )
-frame = 57
+frame = 40
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 modulate = Color( 0.176471, 0.686275, 0.231373, 1 )
-position = Vector2( 79, -11 )
-scale = Vector2( 1, 0.61888 )
+position = Vector2( 47, -5 )
+scale = Vector2( 0.688119, 0.592716 )
 frames = SubResource( 1 )
-frame = 16
+frame = 59
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 modulate = Color( 0.176471, 0.686275, 0.231373, 1 )
-position = Vector2( 116, 5 )
-scale = Vector2( 1, 0.486867 )
+position = Vector2( 69, 8 )
+scale = Vector2( 0.737624, 0.49258 )
 frames = SubResource( 1 )
-frame = 3
+frame = 46
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 78, 46 )
-rotation = -1.63886
+position = Vector2( 54.0342, 35.0889 )
+rotation = -1.55334
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
