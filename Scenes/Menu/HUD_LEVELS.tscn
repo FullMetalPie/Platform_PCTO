@@ -54,13 +54,12 @@ func _on_Lev_2_pressed():
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
 	
 func _on_Lev_3_pressed():
-	#emit_signal(\"lev_3\")
-	print(\"Pulsante 3 premuto\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_3.tscn\")
+	
 func _on_Lev_4_pressed():
-	#emit_signal(\"lev_4\")
-	print(\"Pulsante 4 premuto\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_4.tscn\")
+	
 func _on_Lev_5_pressed():
-	#emit_signal(\"lev_5\")
 	print(\"Pulsante 5 premuto\")
 
 
