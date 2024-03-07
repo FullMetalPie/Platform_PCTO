@@ -12,6 +12,7 @@ var time_start = 0
 var time_now = 0
 var time_win = 0
 export var time_elapsed = 0
+var is_dead = false
 
 var speedBase = 400
 var speed4 = 400
@@ -23,10 +24,7 @@ func _ready():
 	pass # Replace with function body.\
 	
 func _on_Dead_Fall_Zone_body_entered(body):
-	#paused = true
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
-	$Path2D_Scatola1/PathFollow2D_Scatola1.offset = 0
+	_die()
 	
 	
 
@@ -121,50 +119,46 @@ func _on_Button_Win_Coll_pressed():
 
 
 func _on_Box_Area2D_Scatola1_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
-
+	_die()
 
 
 func _on_Box_Area2D_Scatola2_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola3_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola4_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 func _on_Box_Area2D_Scatola5_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola6_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola7_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola8_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola9_body_entered(body):
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 
 
 func _on_Box_Area2D_Scatola10_body_entered(body):
+	_die()
+	
+	
+func _die():
 	$CanvasLayer_Dead/Popup_Dead.show()
 	$Player.speed = 0
+	$Player.hide()
+	is_dead = true

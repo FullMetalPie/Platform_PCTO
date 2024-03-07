@@ -6,6 +6,7 @@ var time_now = 0
 var time_win = 0
 export var time_elapsed = 0
 var paused = false
+var is_dead = false
 
 func _ready():
 	extinguisher_area = $Fire_Estinguisher_Area
@@ -33,8 +34,7 @@ func _process(_delta):
 	
 func _on_Area2D_body_entered(_body): # morte per caduta
 	paused = true
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 	$Path2D_Fire.firespeed = 0
 		
 
@@ -59,13 +59,17 @@ func _on_Button_Win_Esci_pressed():
 
 func _on_Flame_body_entered(_body): # entra nell'area degli ostacoli piccoli (fuoco)
 	paused = true
-	$CanvasLayer_Dead/Popup_Dead.show()
-	$Player.speed = 0
+	_die()
 	$Path2D_Fire.firespeed = 0
 	
 
 func _on_Fire_body_entered(_body): # entra nell'area del fuoco mobile
 	paused = true
+	_die()
+	$Path2D_Fire.firespeed = 0
+
+func _die():
 	$CanvasLayer_Dead/Popup_Dead.show()
 	$Player.speed = 0
-	$Path2D_Fire.firespeed = 0
+	$Player.hide()
+	is_dead = true
