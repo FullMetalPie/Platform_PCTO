@@ -83,19 +83,15 @@ func _process(delta):
 
 func _on_Transporter_right_body_entered(body):
 	is_in1 = true
-	print("Entrato dx")
 
 func _on_Transporter_right_body_exited(body):
 	is_in1 = false
-	print("Uscito dx")
 
 func _on_Transporter_left_body_entered(body):
 	is_in2 = true
-	print("Entrato sx")
 	
 func _on_Transporter_left_body_exited(body):
 	is_in2 = false
-	print("Uscito sx")
 	
 
 
