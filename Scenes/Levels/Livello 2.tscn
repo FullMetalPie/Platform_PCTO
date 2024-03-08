@@ -978,7 +978,7 @@ frame = 3
 playing = true
 
 [node name="Flame7" type="Area2D" parent="."]
-position = Vector2( 3852, 534 )
+position = Vector2( 3865, 534 )
 scale = Vector2( 2, 2 )
 collision_layer = 2
 collision_mask = 2
@@ -1008,7 +1008,7 @@ position = Vector2( -72, -8 )
 
 [node name="Fire_No_Collision" parent="Path2D_Fire/PathFollow2D_Fire" instance=ExtResource( 22 )]
 position = Vector2( -176, 24 )
-frame = 53
+frame = 7
 
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
