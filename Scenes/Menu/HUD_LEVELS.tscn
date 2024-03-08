@@ -20,10 +20,15 @@ script/source = "extends CanvasLayer
 
 onready var popUp_lock = $Popup_Lock
 
+# warning-ignore:unused_signal
 signal lev_1
+# warning-ignore:unused_signal
 signal lev_2
+# warning-ignore:unused_signal
 signal lev_3
+# warning-ignore:unused_signal
 signal lev_4
+# warning-ignore:unused_signal
 signal lev_5
 # Declare member variables here. Examples:
 # var a = 2
@@ -49,21 +54,27 @@ func _ready():
 
 func _on_Lev_1_pressed():
 	#emit_signal(\"lev_1\")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
 func _on_Lev_2_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
 	
 func _on_Lev_3_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello_3.tscn\")
 	
 func _on_Lev_4_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello_4.tscn\")
 	
 func _on_Lev_5_pressed():
-	print(\"Pulsante 5 premuto\")
+# warning-ignore:return_value_discarded
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_5.tscn\")
 
 
 func _on_Exit_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Menu/Main.tscn\")
 
 func disable_and_show():

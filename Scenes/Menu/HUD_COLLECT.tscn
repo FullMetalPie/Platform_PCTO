@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/helmet.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_HOVER.tres" type="StyleBox" id=5]
 [ext_resource path="res://Scenes/Menu/Utility files/fire_extinguisher.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Menu/Utility files/face_mask.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Menu/Utility files/harness.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Menu/Utility files/reflective_suit.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Menu/Utility files/mask.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW_PRESSED.tres" type="StyleBox" id=10]
@@ -61,8 +61,8 @@ func _ready():
 	else:
 		$Col_4.show()
 		$Col_4_False.hide()
-		
-	if !Global.is_Face_Mask_collected:
+
+	if !Global.is_Harness_collected:
 		$Col_5_False.show()
 		$Col_5.hide()
 	else:
@@ -596,24 +596,24 @@ margin_right = 560.0
 margin_bottom = 368.0
 
 [node name="Label_Pop5" type="Label" parent="Popup_Col_5"]
-margin_left = -256.0
-margin_top = -80.0
-margin_right = 296.0
-margin_bottom = 88.0
+margin_left = -383.0
+margin_top = -87.0
+margin_right = 361.0
+margin_bottom = 87.0
 custom_styles/normal = ExtResource( 14 )
-text = "Una mascherina chirurgica, o mascherina igienica è un dispositivo destinato a
-essere indossato dagli operatori sanitari durante un intervento chirurgico o altre
- attività in ambito sanitario al fine di evitare la dispersione di agenti patogeni
- dispersi in goccioline respiratorie e aerosol che possono fuoriuscire dalla bocca
- e dal naso di chi la indossa."
+text = "Le imbracature di sicurezza sono indispensabili per salvaguardare l'operatore dai rischi che potrebbero
+presentarsi durante il lavoro in un cantiere. Obbligatoria per legge, l'imbracatura anticaduta
+deve rispettare una serie di requisiti precisi e risultare conforme alle normative previste. È quindi 
+bene assicurarsi di acquistare dei sistemi di protezione di alta qualità e in possesso di tutte le certificazioni 
+necessarie."
 align = 1
 valign = 1
 
 [node name="Button_X_Pop5" type="Button" parent="Popup_Col_5/Label_Pop5"]
-margin_left = 248.0
-margin_top = 128.0
-margin_right = 304.0
-margin_bottom = 160.0
+margin_left = 341.0
+margin_top = 132.0
+margin_right = 397.0
+margin_bottom = 164.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 10 )
 custom_styles/normal = ExtResource( 10 )
