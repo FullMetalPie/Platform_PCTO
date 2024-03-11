@@ -857,12 +857,11 @@ icon_align = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 503, -2565 )
-amount = 15000
-lifetime = 800.0
+amount = 10000
+lifetime = 3000.0
 emission_shape = 2
 emission_rect_extents = Vector2( 1000, 1 )
-scale_amount = 10.0
-scale_amount_random = 0.7
+scale_amount = 5.0
 
 [node name="Area2D_Change" type="Area2D" parent="."]
 
@@ -957,6 +956,10 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D_Fourth/PathFollow2D_Fourth/RigidBody2D"]
 shape = SubResource( 75 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 80.0
+margin_bottom = 56.0
 
 [connection signal="body_entered" from="Dead_Area" to="." method="_on_Dead_Area_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Dead/Popup_Dead/Label_Dead/Button_Dead_Esci2" to="." method="_on_Button_Dead_Esci2_pressed"]

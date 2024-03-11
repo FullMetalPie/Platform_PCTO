@@ -877,7 +877,6 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 1
 playing = true
 
 [node name="Flame2" type="Area2D" parent="."]
@@ -897,7 +896,7 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Flame3" type="Area2D" parent="."]
@@ -917,7 +916,7 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Flame4" type="Area2D" parent="."]
@@ -937,7 +936,7 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Flame5" type="Area2D" parent="."]
@@ -957,6 +956,7 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
+frame = 3
 playing = true
 
 [node name="Flame6" type="Area2D" parent="."]
@@ -976,7 +976,6 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 1
 playing = true
 
 [node name="Flame7" type="Area2D" parent="."]
@@ -996,7 +995,7 @@ shape = SubResource( 46 )
 position = Vector2( -1, 0 )
 frames = SubResource( 41 )
 animation = "Default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Path2D_Fire" type="Path2D" parent="."]
@@ -1007,11 +1006,11 @@ script = SubResource( 48 )
 position = Vector2( 16, 256 )
 
 [node name="Fire" parent="Path2D_Fire/PathFollow2D_Fire" instance=ExtResource( 21 )]
-position = Vector2( -641, 7 )
+position = Vector2( -105, 3 )
 
 [node name="Fire_No_Collision" parent="Path2D_Fire/PathFollow2D_Fire" instance=ExtResource( 22 )]
-position = Vector2( -730, 39 )
-frame = 27
+position = Vector2( -190, 37 )
+frame = 2
 
 [connection signal="body_entered" from="Dead_Fall_Zone" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer_Win/Popup_Win/Label_Win/Button_Win_Esci" to="." method="_on_Button_Win_Esci_pressed"]
