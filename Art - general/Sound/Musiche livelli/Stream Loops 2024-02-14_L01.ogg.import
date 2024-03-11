@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Stream Loops 2024-02-14_L01.ogg-5ec87e9031c519e441644188ded7b30d.oggstr"
+
+[deps]
+
+source_file="res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L01.ogg"
+dest_files=[ "res://.import/Stream Loops 2024-02-14_L01.ogg-5ec87e9031c519e441644188ded7b30d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
