@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+var pathMenu = \"res://Art - general/Sound/Stream Loops 2024-02-21_02.ogg\"
+var pathLvl1Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L03.ogg\"
+var pathLvl2Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-07.ogg\"
+var pathLvl3Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L01.ogg\"
+var pathLvl4Song = \"res://Art - general/Sound/Musiche livelli/Loop-8.ogg\"
+var pathLvl5Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-28_01.ogg\"
+var flag = false
+var tmp = -1
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Global.volume = $AudioStreamPlayer.volume_db
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$AudioStreamPlayer.volume_db = Global.volume
+	if Global.is_in_what_lvl != tmp:
+		match Global.is_in_what_lvl:
+			1:
+				$AudioStreamPlayer.stop()
+				_returnAudioToPlay(pathLvl1Song).play()
+				flag = true
+			2:
+				_returnAudioToPlay(pathLvl2Song).play()
+				flag = true
+			3:
+				_returnAudioToPlay(pathLvl3Song).play()
+				flag = true
+			4:
+				_returnAudioToPlay(pathLvl4Song).play()
+				flag = true
+			5:
+				_returnAudioToPlay(pathLvl5Song).play()
+				flag = true
+			_:
+				_returnAudioToPlay(pathMenu).play()
+				flag = true
+	tmp = Global.is_in_what_lvl
+
+
+
+func _returnAudioToPlay(path):
+	var file = File.new()
+	if file.file_exists(path):
+		file.open(path, file.READ)
+		var buffer = file.get_buffer(file.get_len())
+		var stream = AudioStreamOGGVorbis.new()
+		stream.data = buffer
+		var audio = get_node(\"AudioStreamPlayer\")
+		audio.stream = stream
+		return audio
+	else:
+		push_error(\"ERRORE! FILE INSESISTENTE\")
+
+
+
+func _on_AudioStreamPlayer_finished():
+	tmp = -1
+"
+
+[node name="Node" type="Node"]
+script = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -12.235
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
