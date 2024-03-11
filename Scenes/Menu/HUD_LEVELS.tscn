@@ -56,8 +56,9 @@ func _ready():
 
 func _on_Lev_1_pressed():
 	#emit_signal(\"lev_1\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(\"res://TMP.tscn\")
+	
 func _on_Lev_2_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
@@ -72,7 +73,7 @@ func _on_Lev_4_pressed():
 	
 func _on_Lev_5_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(\"res://Scenes/Levels/Livello_5.tscn\")
+	get_tree().change_scene(\"res://TMP.tscn\")
 
 
 func _on_Exit_pressed():
