@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_MAIN.tres" type="StyleBox" id=2]
@@ -10,8 +10,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scenes/Menu/Utility files/tickù.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Menu/Utility files/X.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Menu/Utility files/jingle_prova.mp3" type="AudioStream" id=11]
-[ext_resource path="res://Scenes/Menu/Utility files/an orange city.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Menu/Utility files/bulkhead-wallsx3.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Menu/Utility files/settings.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW.tres" type="StyleBox" id=14]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=15]
@@ -31,6 +30,8 @@ signal show_collect
 # var a = 2
 # var b = \"text\"
 
+func _ready():
+	Global.is_in_what_lvl = 0
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
@@ -96,13 +97,13 @@ func _on_Button_FPS_pressed():
 
 
 func _on_Button_Plus_pressed(): #da fare
-	if $AudioStreamPlayer.volume_db <= -10:
-		$AudioStreamPlayer.volume_db += 5
+	if Global.volume <= -20:
+		Global.volume += 5
 
 
 func _on_Button_Minus_pressed(): #da fare
-	if $AudioStreamPlayer.volume_db >= -80:
-		$AudioStreamPlayer.volume_db -= 5
+	if Global.volume >= -80:
+		Global.volume -= 5
 "
 
 [sub_resource type="DynamicFont" id=1]
@@ -176,7 +177,6 @@ font_data = ExtResource( 1 )
 script = SubResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 12 )
@@ -369,12 +369,6 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 16 )
 icon = ExtResource( 10 )
 icon_align = 1
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-volume_db = -30.0
-autoplay = true
-mix_target = 2
 
 [connection signal="pressed" from="Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Collec" to="." method="_on_Collec_pressed"]

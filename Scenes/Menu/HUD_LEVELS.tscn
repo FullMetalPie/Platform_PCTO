@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/new_styleboxflat.tres" type="StyleBox" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/tickù.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=13]
 [ext_resource path="res://Scenes/Menu/Utility files/lvl_disabled.tres" type="StyleBox" id=14]
+[ext_resource path="res://Scenes/Menu/Utility files/bulkhead-wallsx3.png" type="Texture" id=15]
 
 [sub_resource type="GDScript" id=8]
 script/source = "extends CanvasLayer
@@ -37,6 +38,7 @@ signal lev_5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 0
 	if Global.is_Helmet_collected:
 		$Locked_2.hide()
 	if Global.is_Extinguisher_collected:
@@ -55,7 +57,7 @@ func _ready():
 func _on_Lev_1_pressed():
 	#emit_signal(\"lev_1\")
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
+	get_tree().change_scene(\"res://TMP.tscn\")
 func _on_Lev_2_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Scenes/Levels/Livello 2.tscn\")
@@ -169,6 +171,11 @@ font_data = ExtResource( 1 )
 
 [node name="HUD_LEVELS" type="CanvasLayer"]
 script = SubResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 132.0

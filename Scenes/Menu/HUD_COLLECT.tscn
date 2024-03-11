@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_PRESSED.tres" type="StyleBox" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/ARROW.tres" type="StyleBox" id=12]
 [ext_resource path="res://Scenes/Menu/Utility files/X.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Menu/Utility files/LABEL_POPUP.tres" type="StyleBox" id=14]
+[ext_resource path="res://Scenes/Menu/Utility files/bulkhead-wallsx3.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=17]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=18]
@@ -34,6 +35,7 @@ onready var pop_false = $Popup_False
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 0
 	if !Global.is_Helmet_collected:
 		$Col_1_False.show()
 		$Col_1.hide()
@@ -318,6 +320,11 @@ script = SubResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 212.0 ]
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 216.0
