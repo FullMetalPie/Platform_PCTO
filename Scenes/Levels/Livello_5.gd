@@ -20,6 +20,7 @@ func _process(delta):
 	time_elapsed = time_now - time_start
 	if Global.show_fps:
 		$CanvasLayer_FPS/Label_FPS.text = str(Engine.get_frames_per_second()) + " FPS"
+		
 
 func _on_Harness_is_entered():
 	if time_win == 0:
