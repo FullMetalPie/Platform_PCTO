@@ -3,12 +3,12 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
-var pathMenu = "Art - general/Sound/Stream Loops 2024-02-21_02.ogg"
-var pathLvl1Song = "Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L03.ogg"
-var pathLvl2Song = "res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-07.ogg"
-var pathLvl3Song = "res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L01.ogg"
-var pathLvl4Song = "res://Art - general/Sound/Musiche livelli/Loop-8.ogg"
-var pathLvl5Song = "res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-28_01.ogg"
+var pathMenu = \"Art - general/Sound/Stream Loops 2024-02-21_02.ogg\"
+var pathLvl1Song = \"Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L03.ogg\"
+var pathLvl2Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-07.ogg\"
+var pathLvl3Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-14_L01.ogg\"
+var pathLvl4Song = \"res://Art - general/Sound/Musiche livelli/Loop-8.ogg\"
+var pathLvl5Song = \"res://Art - general/Sound/Musiche livelli/Stream Loops 2024-02-28_01.ogg\"
 var flag = false
 var tmp = -1
 
@@ -23,6 +23,7 @@ func _process(delta):
 	if Global.is_in_what_lvl != tmp:
 		match Global.is_in_what_lvl:
 			1:
+				$AudioStreamPlayer.stop()
 				_returnAudioToPlay(pathLvl1Song).play()
 				flag = true
 			2:
