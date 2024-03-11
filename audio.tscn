@@ -23,9 +23,9 @@ func _process(delta):
 	if Global.is_in_what_lvl != tmp:
 		match Global.is_in_what_lvl:
 			1:
-				$AudioStreamPlayer.stop()
-				_returnAudioToPlay(pathLvl1Song).play()
-				flag = true
+				$AudioStreamPlayer.stream = preload(pathLvl1Song)
+				#_returnAudioToPlay(pathLvl1Song).play()
+				#flag = true
 			2:
 				_returnAudioToPlay(pathLvl2Song).play()
 				flag = true
@@ -39,8 +39,9 @@ func _process(delta):
 				_returnAudioToPlay(pathLvl5Song).play()
 				flag = true
 			_:
-				_returnAudioToPlay(pathMenu).play()
-				flag = true
+				$AudioStreamPlayer.stream = preload(pathLvl1Song)
+				#_returnAudioToPlay(pathMenu).play()
+				#flag = true
 	tmp = Global.is_in_what_lvl
 
 
