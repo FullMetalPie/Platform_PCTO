@@ -10,6 +10,7 @@ var is_dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 5
 	time_start = OS.get_unix_time()
 	harness_area = $Harness_Collezionbaile
 	harness_area.connect("is_entered_harness", self, "_on_Harness_is_entered")

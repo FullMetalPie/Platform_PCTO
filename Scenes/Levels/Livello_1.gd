@@ -18,6 +18,7 @@ var speedBase = 400
 var speed4 = 400
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 1
 	helmet_Area = $Helmet_Area
 	helmet_Area.connect("is_entered_Helmet", self, "_on_Helmet_is_entered")
 	time_start = OS.get_unix_time()
@@ -53,7 +54,6 @@ func _process(delta):
 		$Player.position.x -= 2
 		
 		
-	
 	#PATH
 	inc_1_to_3 += delta * speedBase
 	$Path2D_Scatola1/PathFollow2D_Scatola1.offset = inc_1_to_3

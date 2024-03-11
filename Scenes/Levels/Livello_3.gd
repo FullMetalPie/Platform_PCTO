@@ -13,6 +13,7 @@ var mask_area : Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 3
 	mask_area = $Mask_Area
 	mask_area.connect("is_entered_Mask", self, "_on_Mask_is_entered")
 	time_start = OS.get_unix_time()

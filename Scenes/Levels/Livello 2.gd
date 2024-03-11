@@ -9,6 +9,7 @@ var paused = false
 var is_dead = false
 
 func _ready():
+	Global.is_in_what_lvl = 2
 	extinguisher_area = $Fire_Estinguisher_Area
 	extinguisher_area.connect("is_entered_extintor", self, "_on_extinguisher_is_entered")
 	time_start = OS.get_unix_time()

@@ -9,6 +9,7 @@ var win_game = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.is_in_what_lvl = 4
 	reflective_area = $Reflective_Suit_Area
 	reflective_area.connect("is_entered_Reflective_Suit", self, "_on_Reflective_Suit_is_entered")
 	time_start = OS.get_unix_time()
