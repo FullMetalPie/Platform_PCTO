@@ -16,7 +16,6 @@ var tmp = -1
 func _ready():
 	Global.volume = $AudioStreamPlayer.volume_db
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$AudioStreamPlayer.volume_db = Global.volume
@@ -24,8 +23,11 @@ func _process(delta):
 		match Global.is_in_what_lvl:
 			1:
 				$AudioStreamPlayer.stop()
-				_returnAudioToPlay(pathLvl1Song).play()
-				flag = true
+				if _returnAudioToPlay(pathLvl1Song):
+					_returnAudioToPlay(pathLvl1Song).play()
+					flag = true
+				else: 
+					print(\"else\")
 			2:
 				_returnAudioToPlay(pathLvl2Song).play()
 				flag = true
@@ -44,7 +46,6 @@ func _process(delta):
 	tmp = Global.is_in_what_lvl
 
 
-
 func _returnAudioToPlay(path):
 	var file = File.new()
 	if file.file_exists(path):
@@ -53,10 +54,15 @@ func _returnAudioToPlay(path):
 		var stream = AudioStreamOGGVorbis.new()
 		stream.data = buffer
 		var audio = get_node(\"AudioStreamPlayer\")
-		audio.stream = stream
-		return audio
+		
+		if audio:
+			audio.stream = stream
+			return audio
+		else:
+			push_error(\"ERRORE! AudioStreamPlayer non trovato\")
 	else:
-		push_error(\"ERRORE! FILE INSESISTENTE\")
+		push_error(\"ERRORE! FILE INESISTENTE\")
+		return null
 
 
 
