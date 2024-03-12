@@ -839,7 +839,7 @@ position = Vector2( 2314.13, 661 )
 shape = SubResource( 23 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
-position = Vector2( 3122, 462 )
+position = Vector2( 16, 397 )
 collision_layer = 7
 collision_mask = 7
 
