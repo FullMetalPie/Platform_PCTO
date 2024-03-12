@@ -336,7 +336,7 @@ extents = Vector2( 111.5, 15.5001 )
 
 [sub_resource type="SegmentShape2D" id=66]
 a = Vector2( 3679, 514 )
-b = Vector2( 3580, 416 )
+b = Vector2( 3571, 417 )
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 47.5003, 449.5 )
@@ -839,7 +839,7 @@ position = Vector2( 2314.13, 661 )
 shape = SubResource( 23 )
 
 [node name="Player" parent="." instance=ExtResource( 28 )]
-position = Vector2( 3122, 462 )
+position = Vector2( 16, 397 )
 collision_layer = 7
 collision_mask = 7
 
