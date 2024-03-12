@@ -11,12 +11,20 @@ var time_win = 0
 export var time_elapsed = 0
 var mask_area : Area2D
 
+var timer_cont1 = 0
+var timer_cont2 = 0
+var timer_cont3 = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.is_in_what_lvl = 3
 	mask_area = $Mask_Area
 	mask_area.connect("is_entered_Mask", self, "_on_Mask_is_entered")
 	time_start = OS.get_unix_time()
+	
+	$Timer_1.start()
+	$Timer_2.start()
+	$Timer_3.start()
 
 func _die():
 	$CanvasLayer_Dead/Popup_Dead.show()
@@ -130,3 +138,49 @@ func _on_Button_Win_Esci_pressed():
 
 func _on_Button_Win_Coll_pressed():
 	get_tree().change_scene("res://Scenes/Menu/HUD_COLLECT.tscn")
+
+
+
+func _on_Timer_1_timeout():
+	if timer_cont1 % 2 == 0:
+		$Gas_UNDER5.show()
+		$Gas_UP5.show()
+		$Gas_UNDER5/CollisionShape2D.disabled = false
+		$Gas_UP5/CollisionShape2D.disabled = false
+	else:
+		$Gas_UNDER5.hide()
+		$Gas_UP5.hide()
+		$Gas_UNDER5/CollisionShape2D.disabled = true
+		$Gas_UP5/CollisionShape2D.disabled = true
+		
+	timer_cont1 += 1
+
+
+func _on_Timer_2_timeout():
+	if timer_cont2 % 2 == 0:
+		$Gas_UNDER6.show()
+		$Gas_UP6.show()
+		$Gas_UNDER6/CollisionShape2D.disabled = false
+		$Gas_UP6/CollisionShape2D.disabled = false
+	else:
+		$Gas_UNDER6.hide()
+		$Gas_UP6.hide()
+		$Gas_UNDER6/CollisionShape2D.disabled = true
+		$Gas_UP6/CollisionShape2D.disabled = true
+		
+	timer_cont2 += 1
+
+
+func _on_Timer_3_timeout():
+	if timer_cont3 % 2 == 0:
+		$Gas_UNDER7.show()
+		$Gas_UP7.show()
+		$Gas_UNDER7/CollisionShape2D.disabled = false
+		$Gas_UP7/CollisionShape2D.disabled = false
+	else:
+		$Gas_UNDER7.hide()
+		$Gas_UP7.hide()
+		$Gas_UNDER7/CollisionShape2D.disabled = true
+		$Gas_UP7/CollisionShape2D.disabled = true
+		
+	timer_cont3 += 1
