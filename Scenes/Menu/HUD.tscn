@@ -93,7 +93,6 @@ func _on_Button_X_pressed():
 
 func _on_Button_FPS_pressed():
 	Global.show_fps = !Global.show_fps
-	print(Global.show_fps)
 
 
 func _on_Button_Plus_pressed(): #da fare
