@@ -19,6 +19,7 @@ body {
     font-family: sans-serif;
     height: 100vh;
     background-color: var(--background);
+    overflow: hidden;
 }
 
 #canvas {
@@ -185,7 +186,7 @@ body {
 
 #title {
     position: absolute;
-    font-size: 6em;
+    font-size: 4em;
     background: linear-gradient(51deg, var(--text) 0%, var(--secondary) 55%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -250,5 +251,5 @@ body {
 }
 
 .slides img {
-    margin-left: 20%;
+    margin-left: 10%;
 }
