@@ -1,5 +1,5 @@
 html {
-    overflow: hidden;
+
 }
 
 body {
@@ -143,6 +143,10 @@ body {
     cursor: pointer;
 }
 
+#vMenu div:hover {
+
+}
+
 #icon {
     position: fixed;
     right: 0;
@@ -152,6 +156,9 @@ body {
     border-radius: 0.50em;
     border: 2px white solid;
     z-index: 10;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
 }
 
 #info {
