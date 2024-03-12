@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     border: 0;
@@ -147,4 +151,63 @@ body {
     margin: 1em;
     border-radius: 0.50em;
     border: 2px white solid;
+    z-index: 10;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#title {
+    position: absolute;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  align-self: center;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.slides {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    height: 20vh;
+    width: 20vw;
+    text-align: center;
+    padding: 20px;
+}
+
+.slides.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.slides.next {
+    transform: translate(50%, -50%);
+}
+
+.slides.prev {
+    transform: translate(-150%, -50%);
 }
