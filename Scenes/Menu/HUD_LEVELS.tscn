@@ -39,11 +39,11 @@ signal lev_5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.is_in_what_lvl = 0
-	if Global.is_Helmet_collected:
+	if Global.is_Mask_collected:
 		$Locked_2.hide()
 	if Global.is_Extinguisher_collected:
 		$Locked_3.hide()
-	if Global.is_Mask_collected:
+	if Global.is_Helmet_collected:
 		$Locked_4.hide()
 	if Global.is_Reflective_Suit_collected:
 		$Locked_5.hide()
@@ -56,7 +56,7 @@ func _ready():
 
 func _on_Lev_1_pressed():
 	#emit_signal(\"lev_1\")
-	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_3.tscn\")
 # warning-ignore:return_value_discarded
 	
 func _on_Lev_2_pressed():
@@ -65,7 +65,7 @@ func _on_Lev_2_pressed():
 	
 func _on_Lev_3_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(\"res://Scenes/Levels/Livello_3.tscn\")
+	get_tree().change_scene(\"res://Scenes/Levels/Livello_1.tscn\")
 	
 func _on_Lev_4_pressed():
 # warning-ignore:return_value_discarded
