@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_MAIN.tres" type="StyleBox" id=2]
@@ -129,13 +129,6 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 50
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=7]
 size = 45
 outline_size = 1
@@ -202,10 +195,10 @@ align = 1
 valign = 1
 
 [node name="Levels" type="Button" parent="."]
-margin_left = 427.0
-margin_top = 175.0
-margin_right = 594.0
-margin_bottom = 243.0
+margin_left = 428.0
+margin_top = 240.0
+margin_right = 595.0
+margin_bottom = 308.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
@@ -215,9 +208,9 @@ text = "GIOCA"
 
 [node name="Collec" type="Button" parent="."]
 margin_left = 296.0
-margin_top = 312.0
+margin_top = 401.0
 margin_right = 735.0
-margin_bottom = 380.0
+margin_bottom = 469.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -225,19 +218,6 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 2 )
 text = "COLLEZIONABILI"
-
-[node name="Exit" type="Button" parent="."]
-margin_left = 424.0
-margin_top = 448.0
-margin_right = 592.0
-margin_bottom = 516.0
-custom_fonts/font = SubResource( 6 )
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/disabled = ExtResource( 15 )
-custom_styles/normal = ExtResource( 2 )
-text = "ESCI"
-icon_align = 1
 
 [node name="Settings" type="Button" parent="."]
 margin_left = 959.0
@@ -372,7 +352,6 @@ icon_align = 1
 
 [connection signal="pressed" from="Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Collec" to="." method="_on_Collec_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Popup_CloseWindow/Label_Quit/Button_Popup_Yes" to="." method="_on_Button_Popup_Yes_pressed"]
 [connection signal="pressed" from="Popup_CloseWindow/Label_Quit/Button_Popup_No" to="." method="_on_Button_Popup_No_pressed"]
