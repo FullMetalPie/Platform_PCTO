@@ -31,7 +31,7 @@ func _process(_delta):
 	if Global.show_fps:
 		$CanvasLayer/Label_FPS.text = str(Engine.get_frames_per_second()) + " FPS"
 	if $Player.velocity.x != 0:
-		$Path2D_Fire.firespeed = 180
+		$Path2D_Fire.firespeed = 150
 	
 func _on_Area2D_body_entered(_body): # morte per caduta
 	paused = true
