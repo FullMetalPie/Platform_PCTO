@@ -62,8 +62,7 @@ func _on_Exit_pressed():
 
 
 func _on_Button_Popup_Yes_pressed():
-	get_tree().quit()
-	JavaScript.eval(\"window.close()\");
+	get_tree().change_scene(\"res://new scene.tscn\")
 
 
 func _on_Button_Popup_No_pressed():
