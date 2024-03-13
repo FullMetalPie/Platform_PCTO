@@ -240,16 +240,42 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%);
     width: 50%;
+    z-index: 10;
 }
 
 .slides.next {
     transform: translate(50%, -50%);
+    z-index: 0;
 }
 
 .slides.prev {
     transform: translate(-150%, -50%);
+    z-index: 0;
 }
 
 .slides img {
     margin-left: 10%;
+    margin-right: 10%;
+}
+
+.slides a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.slides a:hover {
+    text-decoration: none;
+    color: var(--secondary);
+    transition: 0.5s;
+}
+
+#melazeta:hover {
+    color: #15b500;
+    transition: color 0.5s;
+}
+
+#github:hover {
+    color: #6e5494;
+    transition: color 0.5s;
 }
