@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Menu/Utility files/BUTT_COLLECT_PRESSED.tres" type="StyleBox" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Menu/Utility files/padlock.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Menu/Utility files/SYNNova-Normal.otf" type="DynamicFontData" id=17]
 [ext_resource path="res://Scenes/Menu/Utility files/padlock_disabled.tres" type="StyleBox" id=18]
+[ext_resource path="res://Scenes/Menu/Utility files/tickù.png" type="Texture" id=19]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -35,6 +36,22 @@ onready var pop_false = $Popup_False
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if !Global.already_shown and Global.is_Extinguisher_collected and Global.is_Harness_collected and Global.is_Helmet_collected and Global.is_Mask_collected and Global.is_Reflective_Suit_collected:
+		$Popup_All.show()
+		$Col_1.disabled = true
+		$Col_2.disabled = true
+		$Col_3.disabled = true
+		$Col_4.disabled = true
+		$Col_5.disabled = true
+		$Exit.disabled = true
+		$Col_1_False.disabled = true
+		$Col_2_False.disabled = true
+		$Col_3_False.disabled = true
+		$Col_4_False.disabled = true
+		$Col_5_False.disabled = true
+		$Title.add_color_override(\"font_color\", \"#272727\")
+		Global.already_shown = true
+	
 	Global.is_in_what_lvl = 0
 	if !Global.is_Helmet_collected:
 		$Col_1_False.show()
@@ -292,6 +309,22 @@ func enableAll() -> void:
 
 func _on_Button_False_pressed():
 	enableAll()
+
+
+func _on_Button_All_pressed():
+	$Popup_All.hide()
+	$Col_1.disabled = false
+	$Col_2.disabled = false
+	$Col_3.disabled = false
+	$Col_4.disabled = false
+	$Col_5.disabled = false
+	$Col_1_False.disabled = false
+	$Col_2_False.disabled = false
+	$Col_3_False.disabled = false
+	$Col_4_False.disabled = false
+	$Col_5_False.disabled = false
+	$Exit.disabled = false
+	$Title.add_color_override(\"font_color\", Color.white)
 "
 
 [sub_resource type="DynamicFont" id=1]
@@ -311,6 +344,16 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 34
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 17 )
@@ -663,6 +706,45 @@ custom_fonts/font = SubResource( 5 )
 text = "Gioca il relativo livello per visualizzare le caratteristiche di questo collezionabile"
 align = 1
 
+[node name="Popup_All" type="Popup" parent="."]
+visible = true
+margin_left = 496.0
+margin_top = 304.0
+margin_right = 536.0
+margin_bottom = 344.0
+
+[node name="Label_All" type="Label" parent="Popup_All"]
+margin_left = -376.0
+margin_top = -96.0
+margin_right = 440.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/normal = ExtResource( 14 )
+text = "Complimenti!"
+align = 1
+valign = 3
+
+[node name="Label" type="Label" parent="Popup_All/Label_All"]
+margin_left = 112.0
+margin_top = 56.0
+margin_right = 696.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 7 )
+text = "Hai ottenuto tutti i dispositivi di protezione, non scordarti di leggere per cosa vengono utilizzati"
+align = 1
+autowrap = true
+
+[node name="Button_All" type="Button" parent="Popup_All/Label_All"]
+margin_left = 356.0
+margin_top = 136.0
+margin_right = 460.0
+margin_bottom = 200.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+icon = ExtResource( 19 )
+icon_align = 1
+
 [connection signal="pressed" from="Col_1" to="." method="_on_Col_1_pressed"]
 [connection signal="pressed" from="Col_2" to="." method="_on_Col_2_pressed"]
 [connection signal="pressed" from="Col_3" to="." method="_on_Col_3_pressed"]
@@ -681,3 +763,4 @@ align = 1
 [connection signal="pressed" from="Popup_Col_4/Label_Pop4/Button_X_Pop4" to="." method="_on_Button_X_Pop4_pressed"]
 [connection signal="pressed" from="Popup_Col_5/Label_Pop5/Button_X_Pop5" to="." method="_on_Button_X_Pop5_pressed"]
 [connection signal="pressed" from="Popup_False/Label_False/Button_False" to="." method="_on_Button_False_pressed"]
+[connection signal="pressed" from="Popup_All/Label_All/Button_All" to="." method="_on_Button_All_pressed"]

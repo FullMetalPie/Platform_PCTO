@@ -10,6 +10,7 @@ var is_in_what_lvl = 0
 #------------------VARIABILI GENERALI-----------------------
 var show_fps = false
 var volume = 0
+var already_shown = false
 
 func _ready():
 	pass
